@@ -1645,3 +1645,23 @@ input[type="email"]:focus {
   background: var(--purple-700);
   transform: scale(1.1);
 }
+
+.watermark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15vw; /* El tamaño se ajusta al ancho de pantalla */
+  font-weight: 900;
+  color: rgba(200, 200, 200, 0.2); /* Color gris claro con transparencia */
+  z-index: 9999; /* Asegura que esté por encima de todo */
+  pointer-events: none; /* ¡CRÍTICO! Esto hace que los clics atraviesen el texto */
+  user-select: none;    /* Evita que el usuario seleccione el texto */
+  transform: rotate(-45deg); /* Inclinación clásica de marca de agua */
+  overflow: hidden;
+  white-space: nowrap;
+}
