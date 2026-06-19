@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHIERE – Tu bienestar merece continuidad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#inicio" class="nav-logo">ADHIERE</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+        <li><a href="#evaluacion" class="nav-link">Evaluación</a></li>
+        <li><a href="#psicoeducacion" class="nav-link">Psicoeducación y Recursos</a></li>
+        <li><a href="#psicologos" class="nav-link">Psicólogos</a></li>
+        <li><a href="#recomendaciones" class="nav-link">Recomendaciones</a></li>
+        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+      <a href="#evaluacion" class="btn-eval-rapida">Evaluación rápida</a>
+      <button class="hamburger" id="hamburger" aria-label="Menú">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- HERO / INICIO -->
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <span class="hero-eyebrow">Plataforma de apoyo psicológico</span>
+        <h1 class="hero-title">Tu bienestar<br /><em>merece continuidad</em></h1>
+        <p class="hero-desc">Identificamos las dificultades que pueden afectar tu proceso terapéutico y te brindamos
+          herramientas y recursos personalizados para ayudarte a continuar con tu bienestar psicológico.</p>
+        <a href="#evaluacion" class="btn-primary">Realizar evaluación rápida</a>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <i class="bi bi-lock-fill"></i>
+            <span>Confidencial</span>
+          </div>
+          <div class="badge">
+            <i class="bi bi-tag-fill"></i>
+            <span>Gratuito</span>
+          </div>
+          <div class="badge">
+            <i class="bi bi-clock-fill"></i>
+            <span>~3 minutos</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right hero-img-wrap">
+        <img src="https://www.logopediasanchinarro.es/wp-content/uploads/2025/05/TDH-adultos.jpg"
+          alt="Apoyo psicológico">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BARRERAS INFO -->
+  <section class="barriers" id="barreras">
+    <div class="container">
+      <span class="section-eyebrow">Entendemos el camino</span>
+      <h2 class="section-title">¿Por qué algunas personas<br />abandonan la terapia?</h2>
+      <p class="section-sub">Identificar la barrera es el primer paso para superarla.</p>
+      <div class="barriers-grid">
+        <div class="barrier-card">
+          <div class="barrier-icon"><i class="bi bi-alarm-fill"></i></div>
+          <h3>Falta de tiempo</h3>
+          <p>Las responsabilidades diarias dificultan mantener una agenda terapéutica constante.</p>
+        </div>
+        <div class="barrier-card">
+          <div class="barrier-icon"><i class="bi bi-battery-half"></i></div>
+          <h3>Desmotivación</h3>
+          <p>La sensación de estancamiento puede hacer que el proceso se sienta sin avance.</p>
+        </div>
+        <div class="barrier-card">
+          <div class="barrier-icon"><i class="bi bi-wallet2"></i></div>
+          <h3>Dificultades económicas</h3>
+          <p>El costo de las sesiones puede convertirse en una barrera real para continuar.</p>
+        </div>
+        <div class="barrier-card">
+          <div class="barrier-icon"><i class="bi bi-people-fill"></i></div>
+          <h3>Relación terapéutica</h3>
+          <p>No encontrar al profesional indicado puede generar desconfianza en el proceso.</p>
+        </div>
+        <div class="barrier-card">
+          <div class="barrier-icon"><i class="bi bi-question-circle-fill"></i></div>
+          <h3>Mitos sobre la terapia</h3>
+          <p>Creencias erróneas sobre la psicología llevan a subestimar su valor real.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVALUACIÓN / FORMULARIO -->
+  <section class="eval-section" id="evaluacion">
+    <div class="container">
+      <span class="section-eyebrow light">Evaluación personalizada</span>
+      <h2 class="section-title light">Cuéntanos sobre ti</h2>
+      <p class="section-sub light">Tus respuestas son confidenciales y nos ayudan a mostrarte recursos adaptados a tu
+        situación.
+      </p>
+
+      <div class="form-wrap">
+        <!-- Paso 1 -->
+        <div class="form-step active" id="step1">
+          <div class="step-header">
+            <span class="step-num">1 / 4</span>
+            <h3>Experiencia con terapia</h3>
+          </div>
+          <div class="form-group">
+            <label>¿Es la primera vez que buscas apoyo psicológico?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="primera_vez" value="si" /> Sí, es mi primera
+                vez</label>
+              <label class="radio-opt"><input type="radio" name="primera_vez" value="no" /> No, ya he buscado apoyo
+                antes</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿Actualmente asistes a terapia psicológica?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="asiste" value="si" /> Sí, actualmente asisto</label>
+              <label class="radio-opt"><input type="radio" name="asiste" value="no" /> No, actualmente no asisto</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿Has abandonado anteriormente algún tratamiento psicológico?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="abandono" value="si" /> Sí, en algún momento lo
+                abandoné</label>
+              <label class="radio-opt"><input type="radio" name="abandono" value="no" /> No, nunca he abandonado un
+                tratamiento</label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-primary" onclick="nextStep(1)">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="form-step" id="step2">
+          <div class="step-header">
+            <span class="step-num">2 / 4</span>
+            <h3>Barreras actuales</h3>
+          </div>
+          <div class="form-group">
+            <label>¿Cuál consideras que es tu principal dificultad para continuar con la terapia?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="barrera" value="tiempo" /> Falta de tiempo</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="desmotivacion" /> Desmotivación</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="economica" /> Problemas
+                económicos</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="avances" /> No siento avances</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="mala_exp" /> Mala experiencia con un
+                profesional</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="psicologo" /> No encuentro un psicólogo
+                adecuado</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="mitos" /> Mitos o creencias sobre la
+                terapia</label>
+              <label class="radio-opt"><input type="radio" name="barrera" value="otro" /> Otro</label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" onclick="prevStep(2)">← Anterior</button>
+            <button class="btn-primary" onclick="nextStep(2)">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="form-step" id="step3">
+          <div class="step-header">
+            <span class="step-num">3 / 4</span>
+            <h3>Preferencias del profesional</h3>
+          </div>
+          <div class="form-group">
+            <label>¿Prefieres un psicólogo hombre, mujer o es indiferente?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="genero" value="hombre" /> Hombre</label>
+              <label class="radio-opt"><input type="radio" name="genero" value="mujer" /> Mujer</label>
+              <label class="radio-opt"><input type="radio" name="genero" value="indiferente" /> Me es
+                indiferente</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿Qué modalidad prefieres?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="modalidad" value="virtual" /> Virtual</label>
+              <label class="radio-opt"><input type="radio" name="modalidad" value="presencial" /> Presencial</label>
+              <label class="radio-opt"><input type="radio" name="modalidad" value="ambas" /> Ambas</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>¿Qué área deseas trabajar?</label>
+            <select name="area" id="areaSelect">
+              <option value="">Selecciona una opción</option>
+              <option value="ansiedad">Ansiedad</option>
+              <option value="depresion">Depresión</option>
+              <option value="autoestima">Autoestima</option>
+              <option value="estres">Estrés</option>
+              <option value="relaciones">Relaciones</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>¿Qué estilo de atención prefieres?</label>
+            <div class="radio-group">
+              <label class="radio-opt"><input type="radio" name="estilo" value="empatico" /> Empático</label>
+              <label class="radio-opt"><input type="radio" name="estilo" value="dinamico" /> Dinámico</label>
+              <label class="radio-opt"><input type="radio" name="estilo" value="conversacional" />
+                Conversacional</label>
+              <label class="radio-opt"><input type="radio" name="estilo" value="directo" /> Directo</label>
+              <label class="radio-opt"><input type="radio" name="estilo" value="indiferente" /> Me es
+                indiferente</label>
+            </div>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" onclick="prevStep(3)">← Anterior</button>
+            <button class="btn-primary" onclick="nextStep(3)">Siguiente →</button>
+          </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="form-step" id="step4">
+          <div class="step-header">
+            <span class="step-num">4 / 4</span>
+            <h3>Necesidades personales</h3>
+          </div>
+          <div class="form-group">
+            <label for="esperas">¿Qué esperas lograr con la terapia?</label>
+            <textarea id="esperas" name="esperas" rows="3"
+              placeholder="Cuéntanos con tus propias palabras..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ayuda">¿Qué te ayudaría a mantenerte asistiendo a tus sesiones?</label>
+            <textarea id="ayuda" name="ayuda" rows="3"
+              placeholder="Puedes mencionar horarios, recordatorios, acompañamiento..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="sugerencias">¿Tienes alguna sugerencia o comentario para mejorar esta plataforma?</label>
+            <textarea id="sugerencias" name="sugerencias" rows="3"
+              placeholder="Tu opinión es muy valiosa para nosotros..."></textarea>
+          </div>
+          <div class="step-nav">
+            <button class="btn-outline" onclick="prevStep(4)">← Anterior</button>
+            <button class="btn-primary" onclick="submitForm()">Ver mis recomendaciones ✦</button>
+          </div>
+        </div>
+
+        <!-- Resultado -->
+        <div class="form-step" id="stepResult">
+          <div class="result-header">
+            <div class="result-icon">✦</div>
+            <h3>¡Gracias por compartir!</h3>
+            <p>Hemos preparado recursos personalizados según tus respuestas.</p>
+          </div>
+          <div id="resultContent"></div>
+          <div class="step-nav" style="margin-top:2rem; flex-wrap:wrap; gap:1rem;">
+            <a href="#recomendaciones" class="btn-primary">Ver mis recomendaciones</a>
+            <button class="btn-outline" onclick="exportExcel()">Exportar a Excel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="psico-section" id="psicoeducacion">
+    <div class="container">
+      <span class="section-eyebrow">Aprende y comprende</span>
+      <h2 class="section-title">Psicoeducación</h2>
+      <p class="section-sub">Recursos elaborados para acompañarte en tu proceso.
+      </p>
+      <div class="psico-tabs">
+        <button class="psico-tab active" onclick="showPsicoTab('videos', this)">Videos</button>
+        <button class="psico-tab" onclick="showPsicoTab('infografias', this)">Infografías</button>
+        <button class="psico-tab" onclick="showPsicoTab('guias', this)">Guías prácticas</button>
+      </div>
+      <!-- TAB: VIDEOS -->
+      <div class="psico-content" id="psico-videos">
+        <div class="info-carousel-wrap">
+          <button class="info-arrow info-arrow--prev" onclick="videoPrev()" aria-label="Anterior">&#8592;</button>
+          <div class="info-track-outer">
+            <div class="info-track" id="videoTrack">
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=zxxxWRNnyZo" target="_blank">
+                    <img src="https://img.youtube.com/vi/zxxxWRNnyZo/hqdefault.jpg"
+                      alt="¿Qué es la adherencia terapéutica en Oncología?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es la adherencia terapéutica en Oncología?</h4>
+                    <p>Se explica qué es la adherencia al tratamiento...</p>
+                    <span class="resource-meta">⏱ 1 min · J&J Contigo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=AvjyfxzkWBs" target="_blank">
+                    <img src="https://img.youtube.com/vi/AvjyfxzkWBs/hqdefault.jpg" alt="¿Qué es la ansiedad?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es la ansiedad?</h4>
+                    <p>La ansiedad es una emoción normal que nos permite prepararnos para actuar. En algunas ocasiones
+                      puede
+                      convertirse en un trastorno.</p>
+                    <span class="resource-meta">⏱ 2 min · TecSalud</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=gxkRwYBkyIo" target="_blank">
+                    <img src="https://img.youtube.com/vi/gxkRwYBkyIo/hqdefault.jpg"
+                      alt="¿Qué causa los ataques de pánico y cómo prevenirlos?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué causa los ataques de pánico y cómo prevenirlos?</h4>
+                    <p>Casi un tercio de nosotros experimentaremos al menos un ataque de pánico en nuestras vidas. Cindy
+                      J. Aaronson
+                      lo investiga.</p>
+                    <span class="resource-meta">⏱ 5 min · Cindy J. Aaronson</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=dswLKHhocxk" target="_blank">
+                    <img src="https://img.youtube.com/vi/dswLKHhocxk/hqdefault.jpg"
+                      alt="¿Qué es el Estrés? Síntomas y Tratamiento" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es el Estrés? Síntomas y Tratamiento</h4>
+                    <p>La especialista Rosa González habla sobre qué es el estrés, cómo identificar los síntomas y cómo
+                      tratarlo.</p>
+                    <span class="resource-meta">⏱ 2 min · Rosa González</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=xH8rEPKuZKU" target="_blank">
+                    <img src="https://img.youtube.com/vi/xH8rEPKuZKU/hqdefault.jpg" alt="¿Qué es la depresión?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es la depresión?</h4>
+                    <p>La depresión es la cuarta causa de incapacidad laboral en el mundo. En México, las mujeres son
+                      quienes más la
+                      padecen.</p>
+                    <span class="resource-meta">⏱ 2 min · NMás</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=Ziq6IBpy7ZY" target="_blank">
+                    <img src="https://img.youtube.com/vi/Ziq6IBpy7ZY/hqdefault.jpg" alt="¿Qué es el duelo?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es el duelo?</h4>
+                    <p>De la mano de un especialista, te daremos a conocer información muy interesante con respuestas
+                      directas de
+                      expertos.</p>
+                    <span class="resource-meta">⏱ 1 min · Medicable</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=HYnWaRKdgaY" target="_blank">
+                    <img src="https://img.youtube.com/vi/HYnWaRKdgaY/hqdefault.jpg"
+                      alt="Baja Autoestima: causas y consecuencias" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Baja Autoestima: causas y consecuencias</h4>
+                    <p>La autoestima es la percepción evaluativa de nosotros mismos. Conoce sus causas y cómo
+                      fortalecerla.</p>
+                    <span class="resource-meta">⏱ 3 min · María Claros</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=WskC9epIAtw" target="_blank">
+                    <img src="https://img.youtube.com/vi/WskC9epIAtw/hqdefault.jpg" alt="Regulación Emocional"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Regulación Emocional</h4>
+                    <p>Salud mental: regulación emocional.</p>
+                    <span class="resource-meta">⏱ 1 min · Minsa Perú</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=EB1bJoMGebc" target="_blank">
+                    <img src="https://img.youtube.com/vi/EB1bJoMGebc/hqdefault.jpg"
+                      alt="¿Cómo es una relación sana de pareja?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Cómo es una relación sana de pareja?</h4>
+                    <p>Tras más de 30 años de trabajo de campo, Mansukhani contempla la salud desde una perspectiva
+                      integral.</p>
+                    <span class="resource-meta">⏱ 7 min · Arun Mansukhani</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=H5o5IWqQD88" target="_blank">
+                    <img src="https://img.youtube.com/vi/H5o5IWqQD88/hqdefault.jpg"
+                      alt="Conoce qué es la dependencia emocional" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Conoce qué es la dependencia emocional</h4>
+                    <p>La dependencia emocional puede darse en pareja, pero también en el trabajo buscando aprobación
+                      constante.</p>
+                    <span class="resource-meta">⏱ 3 min · Top Doctors España</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=6UgpaozCD1Y" target="_blank">
+                    <img src="https://img.youtube.com/vi/6UgpaozCD1Y/hqdefault.jpg"
+                      alt="6 señales de que convives con un familiar tóxico" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>6 señales de que convives con un familiar tóxico</h4>
+                    <p>No resulta fácil aceptar como persona tóxica a alguien de tu familia, pero algunas señales
+                      sutiles pueden
+                      revelarlo.</p>
+                    <span class="resource-meta">⏱ 7 min · Sapiencia práctica</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=830GxiiCUkU" target="_blank">
+                    <img src="https://img.youtube.com/vi/830GxiiCUkU/hqdefault.jpg"
+                      alt="Maltrato psicológico: ¿Qué es el abuso emocional?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Maltrato psicológico: ¿Qué es el abuso emocional?</h4>
+                    <p>Una forma de abuso que puede resultar en trauma psicológico, ansiedad, depression crónica o
+                      estrés
+                      postraumático.</p>
+                    <span class="resource-meta">⏱ 7 min · Francisco Shibata</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=F1WrfWtsdRY" target="_blank">
+                    <img src="https://img.youtube.com/vi/F1WrfWtsdRY/hqdefault.jpg" alt="Salud Sexual y Reproductiva"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Salud Sexual y Reproductiva</h4>
+                    <p></p>
+                    <span class="resource-meta">⏱ 4 min · Mario Carreón</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=WcuDJ3_qLvk" target="_blank">
+                    <img src="https://img.youtube.com/vi/WcuDJ3_qLvk/hqdefault.jpg" alt="TDAH ¿Qué es realmente?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>TDAH ¿Qué es realmente?</h4>
+                    <p>El TDAH fue descrito en 1902 y en estos momentos tiene mucha prevalencia. No debemos poner
+                      etiquetas.</p>
+                    <span class="resource-meta">⏱ 6 min · Top Doctors España</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=XhmvcCbd6mI" target="_blank">
+                    <img src="https://img.youtube.com/vi/XhmvcCbd6mI/hqdefault.jpg"
+                      alt="¿Qué es el trastorno del espectro autista (TEA)?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es el trastorno del espectro autista (TEA)?</h4>
+                    <p>Marcia Olhaberry explica en qué consiste el TEA, sus características y cómo reconocerlo.</p>
+                    <span class="resource-meta">⏱ 2 min · CNN Chile</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=7i3fp2xj31Y" target="_blank">
+                    <img src="https://img.youtube.com/vi/7i3fp2xj31Y/hqdefault.jpg"
+                      alt="¿Qué son los trastornos de la conducta alimentaria?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué son los trastornos de la conducta alimentaria?</h4>
+                    <p>Parten de creencias negativas sobre el cuerpo y el peso. Los cambios de ánimo o excusas para no
+                      comer pueden
+                      ser indicios.</p>
+                    <span class="resource-meta">⏱ 1 min · Universitat Rovira i Virgili</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=jXVs5dLYRz0" target="_blank">
+                    <img src="https://img.youtube.com/vi/jXVs5dLYRz0/hqdefault.jpg" alt="¿Qué son las adicciones?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué son las adicciones?</h4>
+                    <p></p>
+                    <span class="resource-meta">⏱ 3 min · Centros de Integración Juvenil</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=Z5jUr2MoYc0" target="_blank">
+                    <img src="https://img.youtube.com/vi/Z5jUr2MoYc0/hqdefault.jpg"
+                      alt="¿Qué son las habilidades sociales?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué son las habilidades sociales?</h4>
+                    <p>Mejoran las relaciones interpersonales y son necesarias para interactuar con los demás de forma
+                      efectiva.</p>
+                    <span class="resource-meta">⏱ 1 min · Así Funciona Nuestra Mente</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=QYtmmE5W9Ow" target="_blank">
+                    <img src="https://img.youtube.com/vi/QYtmmE5W9Ow/hqdefault.jpg"
+                      alt="¿Qué es el bullying o acoso escolar?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es el bullying o acoso escolar?</h4>
+                    <p>La médica psiquiatra Wendy Atincona explica las características para detectarlo a tiempo y buscar
+                      ayuda.</p>
+                    <span class="resource-meta">⏱ 3 min · INSM Honorio Delgado</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=5snOSoGQnSM" target="_blank">
+                    <img src="https://img.youtube.com/vi/5snOSoGQnSM/hqdefault.jpg" alt="Síndrome de Burnout"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Síndrome de Burnout</h4>
+                    <p></p>
+                    <span class="resource-meta">⏱ 4 min · Dr. Daniel López Rosetti</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=xir9Qytxo80" target="_blank">
+                    <img src="https://img.youtube.com/vi/xir9Qytxo80/hqdefault.jpg"
+                      alt="¿Cómo identificar si tengo un trastorno del sueño?" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Cómo identificar si tengo un trastorno del sueño?</h4>
+                    <p>Un experto cuenta cómo afecta al cuerpo la falta de sueño y cuáles son los principales problemas.
+                    </p>
+                    <span class="resource-meta">⏱ 2 min · Hospital Médica Sur</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=UFaAfDcLg7I" target="_blank">
+                    <img src="https://img.youtube.com/vi/UFaAfDcLg7I/hqdefault.jpg"
+                      alt="Cómo manejar la ira con una técnica de 3 pasos" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Cómo manejar la ira con una técnica de 3 pasos</h4>
+                    <p></p>
+                    <span class="resource-meta">⏱ 14 min · Chris Núñez Psicólogo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=IqbOoPuduTI" target="_blank">
+                    <img src="https://img.youtube.com/vi/IqbOoPuduTI/hqdefault.jpg" alt="¿Qué es la Autolesión?"
+                      class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>¿Qué es la Autolesión?</h4>
+                    <p>Las autolesiones generalmente comienzan en la adolescencia pero pueden ocurrir a cualquier edad.
+                    </p>
+                    <span class="resource-meta">⏱ 4 min · Psych Hub</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=gEaadjSca28" target="_blank">
+                    <img src="https://img.youtube.com/vi/gEaadjSca28/hqdefault.jpg"
+                      alt="Fobia social: síntomas, causas y tratamientos" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Fobia social: síntomas, causas y tratamientos</h4>
+                    <p>Qué es la fobia social (o ansiedad social), cuáles son sus síntomas, causas y tratamientos.</p>
+                    <span class="resource-meta">⏱ 8 min · R&A Psicólogos</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="resource-card resource-card--video">
+                  <a class="video-thumb-link" href="https://www.youtube.com/watch?v=qe4B5pcWEFY" target="_blank">
+                    <img src="https://img.youtube.com/vi/qe4B5pcWEFY/hqdefault.jpg"
+                      alt="Proyecto de vida y toma de decisiones" class="video-thumb-img" />
+                    <div class="video-play-overlay">
+                      <div class="video-play-btn">▶</div>
+                    </div>
+                  </a>
+                  <div class="resource-card-body">
+                    <span class="resource-badge resource-badge--video">▶ Video</span>
+                    <h4>Proyecto de vida y toma de decisiones</h4>
+                    <p></p>
+                    <span class="resource-meta">⏱ 1 min · Tomás Onofre Sorcia</span>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /videoTrack -->
+          </div><!-- /info-track-outer -->
+          <button class="info-arrow info-arrow--next" onclick="videoNext()" aria-label="Siguiente">&#8594;</button>
+        </div>
+      </div>
+
+      <div class="psico-content hidden" id="psico-infografias">
+
+        <!-- Carrusel wrapper -->
+        <div class="info-carousel-wrap">
+          <button class="info-arrow info-arrow--prev" onclick="infoPrev()" aria-label="Anterior">&#8592;</button>
+
+          <div class="info-track-outer">
+            <div class="info-track" id="infoTrack">
+
+              <!-- Infografía 1 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-1.jpeg" data-src="img/infografia-1.jpeg" alt="¿Qué es la salud mental?" />
+                    <div class="info-card-hover">
+                      <span>🔍 Ver completa</span>
+                    </div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info">Infografía</span>
+                    <h4>Adherencia terapéutica</h4>
+                    <p>Tu compromiso con el proceso es clave para tu bienestar</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 2 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-2.jpeg" data-src="img/infografia-2.jpeg" alt="Continuidad terapéutica" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Ansiedad</h4>
+                    <p>Conocerla es el primer paso para transformarla</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 3 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-3.jpeg" data-src="img/infografia-3.jpeg" alt="Organización del tiempo" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Ataques de pánico</h4>
+                    <p>Entender lo que ocurre para recuperar tu calma</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 4 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-4.jpeg" data-src="img/infografia-4.jpeg" alt="Manejo emocional" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Estrés</h4>
+                    <p>Entenderlo es el primer paso para gestionarlo</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 5 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-5.jpeg" data-src="img/infografia-5.jpeg"
+                      alt="Estrategias de afrontamiento" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Depresión</h4>
+                    <p>Entenderla es el primer paso para sentirte mejor</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 6 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-6.jpeg" data-src="img/infografia-6.jpeg" alt="Mitos sobre la terapia" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Duelo</h4>
+                    <p>Permitete sentir para poder sanar</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 7 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-7.jpeg" data-src="img/infografia-7.jpeg"
+                      alt="Señales de alerta emocional" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Baja autoestima</h4>
+                    <p>Entenderla es el primer paso para fortalecerla</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 8 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-8.jpeg" data-src="img/infografia-8.jpeg"
+                      alt="Tipos de terapia psicológica" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Regulación emocional</h4>
+                    <p>Aprender a gestionar lo que sientes es aprender a vivir mejor</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 9 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-9.jpeg" data-src="img/infografia-9.jpeg" alt="Relación terapéutica" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Problemas de pareja</h4>
+                    <p>Entenderlos es el primer paso para mejorar la relación</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 10 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-10.jpeg" data-src="img/infografia-10.jpeg" alt="Autocuidado y terapia" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Dependencia emocional</h4>
+                    <p>Entenderla es el primer paso para recuperar tu bienestar</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Infografía 11 -->
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/infografia-11.jpeg" data-src="img/infografia-11.jpeg"
+                      alt="Recursos de apoyo en Perú" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--info"> Infografía</span>
+                    <h4>Problemas familiares</h4>
+                    <p>Entenderlos es el primer paso para construir relaciones más sanas</p>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- /infо-track -->
+          </div><!-- /infо-track-outer -->
+
+          <button class="info-arrow info-arrow--next" onclick="infoNext()" aria-label="Siguiente">&#8594;</button>
+        </div><!-- /infо-carousel-wrap -->
+
+      </div>
+
+      <!-- MODAL LIGHTBOX -->
+      <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-prev" onclick="lightboxPrev(event)">&#8592;</button>
+        <div class="lightbox-img-wrap">
+          <img id="lightboxImg" src="" alt="" />
+          <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+        <button class="lightbox-next" onclick="lightboxNext(event)">&#8594;</button>
+      </div>
+
+      <!-- TAB: GUÍAS PRÁCTICAS -->
+      <div class="psico-content hidden" id="psico-guias">
+        <div class="resource-grid">
+
+          <!-- MODELO: Guía descargable -->
+          <!-- Para reemplazar: cambia href del botón por la ruta real del PDF.
+               Ej: href="guias/guia-afrontamiento.pdf" -->
+          <div class="resource-card resource-card--guia">
+            <div class="guia-preview">
+              <div class="guia-icon-wrap"></div>
+              <div class="guia-meta-wrap">
+                <span class="guia-tipo">PDF · 8 páginas</span>
+                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <span class="resource-badge resource-badge--guia">Guía</span>
+              <h4>Guía de afrontamiento emocional</h4>
+              <p>Estrategias prácticas y basadas en evidencia para atravesar momentos difíciles dentro y fuera de las
+                sesiones.</p>
+              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
+            </div>
+          </div>
+
+          <!-- MODELO: Guía 2 -->
+          <div class="resource-card resource-card--guia">
+            <div class="guia-preview">
+              <div class="guia-icon-wrap"></div>
+              <div class="guia-meta-wrap">
+                <span class="guia-tipo">PDF · 6 páginas</span>
+                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <span class="resource-badge resource-badge--guia">Guía</span>
+              <h4>Cómo elegir un psicólogo</h4>
+              <p>Qué preguntas hacerse, qué señales observar y cómo saber si el vínculo terapéutico es el adecuado.</p>
+              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
+            </div>
+          </div>
+
+          <!-- MODELO: Guía 3 -->
+          <div class="resource-card resource-card--guia">
+            <div class="guia-preview">
+              <div class="guia-icon-wrap"></div>
+              <div class="guia-meta-wrap">
+                <span class="guia-tipo">PDF · 10 páginas</span>
+                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+              </div>
+            </div>
+            <div class="resource-card-body">
+              <span class="resource-badge resource-badge--guia">Guía</span>
+              <h4>Manejo emocional diario</h4>
+              <p>Técnicas de regulación emocional que puedes aplicar entre sesiones para fortalecer tu proceso.</p>
+              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PSICÓLOGOS -->
+  <section class="psicos-section" id="psicologos">
+    <div class="container">
+      <span class="section-eyebrow">Profesionales verificados</span>
+      <h2 class="section-title">Psicólogos recomendados</h2>
+      <p class="section-sub">Profesionales con quienes puedes dar el siguiente paso en tu proceso terapéutico.</p>
+      <div class="psicos-grid">
+        <div class="psico-card">
+          <div class="psico-avatar">MR</div>
+          <h3>Lic. María Rodríguez</h3>
+          <span class="psico-tag">Ansiedad · Autoestima</span>
+          <span class="psico-tag modal-tag">Virtual y presencial</span>
+          <p>Especialista en terapia cognitivo-conductual con enfoque empático y personalizado. Más de 8 años
+            acompañando procesos de cambio.</p>
+          <a href="#contacto" class="btn-small">Solicitar información</a>
+        </div>
+        <div class="psico-card">
+          <div class="psico-avatar">CP</div>
+          <h3>Lic. Carlos Paredes</h3>
+          <span class="psico-tag">Depresión · Estrés</span>
+          <span class="psico-tag modal-tag">Presencial</span>
+          <p>Psicólogo clínico con formación en terapia humanista. Su estilo dinámico y directo facilita avances reales
+            desde la primera sesión.</p>
+          <a href="#contacto" class="btn-small">Solicitar información</a>
+        </div>
+        <div class="psico-card">
+          <div class="psico-avatar">AL</div>
+          <h3>Lic. Andrea Luna</h3>
+          <span class="psico-tag">Relaciones · Estrés</span>
+          <span class="psico-tag modal-tag">Virtual</span>
+          <p>Especialista en terapia sistémica y relaciones interpersonales. Crea espacios de confianza donde el cambio
+            ocurre naturalmente.</p>
+          <a href="#contacto" class="btn-small">Solicitar información</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMENDACIONES PERSONALIZADAS -->
+  <section class="recs-section" id="recomendaciones">
+    <div class="container">
+      <span class="section-eyebrow">Solo para ti</span>
+      <h2 class="section-title">Recomendaciones para ti</h2>
+      <div id="recsContent">
+        <div class="recs-empty">
+          <p>Completa la <a href="#evaluacion">evaluación rápida</a> para ver tus recomendaciones personalizadas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact-section" id="contacto">
+    <div class="container">
+      <span class="section-eyebrow">Estamos aquí</span>
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-sub">¿Tienes dudas o necesitas orientación? Escríbenos.</p>
+      <div class="contact-form-wrap">
+        <div class="form-group">
+          <label for="contactNombre">Nombre</label>
+          <input type="text" id="contactNombre" placeholder="Tu nombre" />
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Correo electrónico</label>
+          <input type="email" id="contactEmail" placeholder="tu@correo.com" />
+        </div>
+        <div class="form-group">
+          <label for="contactMsg">Mensaje</label>
+          <textarea id="contactMsg" rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+        </div>
+        <button class="btn-primary" onclick="sendContact()">Enviar mensaje</button>
+        <p class="contact-note" id="contactNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMERGENCIAS -->
+  <div class="emergency-bar">
+    <div class="emergency-inner">
+      <span class="emergency-icon"></span>
+      <span><strong>¿Necesitas ayuda inmediata?</strong> Si estás atravesando una crisis emocional, no estás
+        solo/a.</span>
+      <a href="tel:113" class="btn-emergency">Llamar al 113</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <span class="footer-logo">ADHIERE</span>
+        <p>Plataforma de apoyo para la continuidad del tratamiento psicológico. Proyecto académico de innovación.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#evaluacion">Evaluación</a></li>
+          <li><a href="#psicoeducacion">Psicoeducación</a></li>
+          <li><a href="#psicologos">Psicólogos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Aviso de confidencialidad</a></li>
+        </ul>
+        <p class="footer-note">Esta plataforma no reemplaza la atención profesional en situaciones de emergencia.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ADHIERE · Proyecto de Innovación · Todos los derechos reservados</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
