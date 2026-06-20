@@ -120,118 +120,250 @@ function submitForm() {
 
 // ---- PERSONALIZACIÓN POR BARRERA ----
 // ---- CATÁLOGO DE RECURSOS REALES (Basado en tu HTML) ----
-const resourcesCatalog = {
+const RECURSOS = {
   videos: {
-    ansiedad: { type: 'video', title: '¿Qué es la ansiedad?', desc: 'La ansiedad es una emoción normal que nos permite prepararnos para actuar. En algunas ocasiones puede convertirse en un trastorno.', youtubeId: 'AvjyfxzkWBs', duracion: '2 min', autor: 'TecSalud' },
-    depresion: { type: 'video', title: '¿Qué es la depresión?', desc: 'La depresión es la cuarta causa de incapacidad laboral en el mundo.', youtubeId: 'xH8rEPKuZKU', duracion: '2 min', autor: 'NMás' },
-    autoestima: { type: 'video', title: 'Baja Autoestima: causas y consecuencias', desc: 'La autoestima es la percepción evaluativa de nosotros mismos. Conoce sus causas y cómo fortalecerla.', youtubeId: 'HYnWaRKdgaY', duracion: '3 min', autor: 'María Claros' },
-    estres: { type: 'video', title: '¿Qué es el Estrés? Síntomas y Tratamiento', desc: 'La especialista Rosa González habla sobre qué es el estrés y cómo tratarlo.', youtubeId: 'dswLKHhocxk', duracion: '2 min', autor: 'Rosa González' },
-    relaciones: { type: 'video', title: '¿Cómo es una relación sana de pareja?', desc: 'Tras más de 30 años de trabajo de campo, Mansukhani contempla la salud desde una perspectiva integral.', youtubeId: 'EB1bJoMGebc', duracion: '7 min', autor: 'Arun Mansukhani' },
-    adherencia: { type: 'video', title: '¿Qué es la adherencia terapéutica?', desc: 'Se explica qué es la adherencia al tratamiento...', youtubeId: 'zxxxWRNnyZo', duracion: '1 min', autor: 'J&J Contigo' },
+    adherencia:        { youtubeId: 'LbTidy2zSGY', title: 'Claves para una correcta adherencia terapéutica', desc: 'El empoderamiento del paciente y su relación con los profesionales sanitarios.', duracion: '6 min', autor: 'Plataforma de Organizaciones de Pacientes' },
+    ansiedad:          { youtubeId: 'AvjyfxzkWBs', title: '¿Qué es la ansiedad?', desc: 'La ansiedad es una emoción normal que puede convertirse en trastorno.', duracion: '2 min', autor: 'TecSalud' },
+    ataquePanico:      { youtubeId: 'gxkRwYBkyIo', title: '¿Qué causa los ataques de pánico?', desc: 'Casi un tercio de nosotros experimentaremos al menos un ataque de pánico en nuestra vida.', duracion: '5 min', autor: 'Cindy J. Aaronson' },
+    estres:            { youtubeId: 'dswLKHhocxk', title: '¿Qué es el Estrés? Síntomas y Tratamiento', desc: 'Cómo identificar los síntomas del estrés y cómo tratarlo.', duracion: '2 min', autor: 'Rosa González' },
+    depresion:         { youtubeId: 'xH8rEPKuZKU', title: '¿Qué es la depresión?', desc: 'La depresión es la cuarta causa de incapacidad laboral en el mundo.', duracion: '2 min', autor: 'NMás' },
+    duelo:             { youtubeId: 'Ziq6IBpy7ZY', title: '¿Qué es el duelo?', desc: 'Respuestas directas de especialistas sobre el proceso del duelo.', duracion: '1 min', autor: 'Medicable' },
+    bajaAutoestima:    { youtubeId: 'HYnWaRKdgaY', title: 'Baja Autoestima: causas y consecuencias', desc: 'La autoestima es la percepción evaluativa de nosotros mismos.', duracion: '3 min', autor: 'María Claros' },
+    regulacionEmocional: { youtubeId: 'WskC9epIAtw', title: 'Regulación Emocional', desc: 'Salud mental y regulación emocional.', duracion: '1 min', autor: 'Minsa Perú' },
+    problemaPareja:    { youtubeId: 'EB1bJoMGebc', title: '¿Cómo es una relación sana de pareja?', desc: 'La salud desde una perspectiva integral en las relaciones.', duracion: '7 min', autor: 'Arun Mansukhani' },
+    dependenciaEmocional: { youtubeId: 'H5o5IWqQD88', title: 'Conoce qué es la dependencia emocional', desc: 'La dependencia emocional puede darse en pareja y también en el trabajo.', duracion: '3 min', autor: 'Top Doctors España' },
+    problemaFamiliar:  { youtubeId: '6UgpaozCD1Y', title: '6 señales de que convives con un familiar tóxico', desc: 'Señales sutiles que pueden revelar comportamientos tóxicos en la familia.', duracion: '7 min', autor: 'Sapiencia práctica' },
+    violenciaPsico:    { youtubeId: '830GxiiCUkU', title: 'Maltrato psicológico: ¿Qué es el abuso emocional?', desc: 'Una forma de abuso que puede resultar en trauma psicológico y estrés postraumático.', duracion: '7 min', autor: 'Francisco Shibata' },
+    sexualidadSalud:   { youtubeId: 'F1WrfWtsdRY', title: 'Salud Sexual y Reproductiva', desc: 'Información sobre salud sexual y reproductiva.', duracion: '4 min', autor: 'Mario Carreón' },
+    tdah:              { youtubeId: 'WcuDJ3_qLvk', title: 'TDAH ¿Qué es realmente?', desc: 'El TDAH tiene mucha prevalencia. No debemos poner etiquetas.', duracion: '6 min', autor: 'Top Doctors España' },
+    tea:               { youtubeId: 'XhmvcCbd6mI', title: '¿Qué es el trastorno del espectro autista (TEA)?', desc: 'Sus características y cómo reconocerlo.', duracion: '2 min', autor: 'CNN Chile' },
+    tca:               { youtubeId: '7i3fp2xj31Y', title: '¿Qué son los trastornos de la conducta alimentaria?', desc: 'Parten de creencias negativas sobre el cuerpo y el peso.', duracion: '1 min', autor: 'Universitat Rovira i Virgili' },
+    adicciones:        { youtubeId: 'jXVs5dLYRz0', title: '¿Qué son las adicciones?', desc: 'Comprende qué es una adicción y cómo afecta la vida.', duracion: '3 min', autor: 'Centros de Integración Juvenil' },
+    habilidadSociales: { youtubeId: 'Z5jUr2MoYc0', title: '¿Qué son las habilidades sociales?', desc: 'Son necesarias para interactuar con los demás de forma efectiva.', duracion: '1 min', autor: 'Así Funciona Nuestra Mente' },
+    bullying:          { youtubeId: 'QYtmmE5W9Ow', title: '¿Qué es el bullying o acoso escolar?', desc: 'Características para detectarlo a tiempo y buscar ayuda.', duracion: '3 min', autor: 'INSM Honorio Delgado' },
+    burnout:           { youtubeId: '5snOSoGQnSM', title: 'Síndrome de Burnout', desc: 'Qué es el burnout y cómo afecta la salud mental.', duracion: '4 min', autor: 'Dr. Daniel López Rosetti' },
+    problemaSueño:     { youtubeId: 'xir9Qytxo80', title: '¿Cómo identificar si tengo un trastorno del sueño?', desc: 'Cómo afecta al cuerpo la falta de sueño.', duracion: '2 min', autor: 'Hospital Médica Sur' },
+    ira:               { youtubeId: 'UFaAfDcLg7I', title: 'Cómo manejar la ira con una técnica de 3 pasos', desc: 'Técnica práctica para gestionar la ira.', duracion: '14 min', autor: 'Chris Núñez Psicólogo' },
+    autolesiones:      { youtubeId: 'IqbOoPuduTI', title: '¿Qué es la Autolesión?', desc: 'Las autolesiones pueden ocurrir a cualquier edad.', duracion: '4 min', autor: 'Psych Hub' },
+    ansiedadSocial:    { youtubeId: 'gEaadjSca28', title: 'Fobia social: síntomas, causas y tratamientos', desc: 'Qué es la ansiedad social y cómo tratarla.', duracion: '8 min', autor: 'R&A Psicólogos' },
+    proyectoVida:      { youtubeId: 'qe4B5pcWEFY', title: 'Proyecto de vida y toma de decisiones', desc: 'Herramientas para construir tu proyecto de vida.', duracion: '1 min', autor: 'Tomás Onofre Sorcia' },
   },
   infografias: {
-    ansiedad: { type: 'infografia', title: 'Ansiedad', desc: 'Conocerla es el primer paso para transformarla', imgSrc: 'img/infografia-2.jpeg', imgAlt: 'Infografía Ansiedad', linkVerCompleta: 'img/infografia-2.jpeg' },
-    depresion: { type: 'infografia', title: 'Depresión', desc: 'Entenderla es el primer paso para sentirte mejor', imgSrc: 'img/infografia-5.jpeg', imgAlt: 'Infografía Depresión', linkVerCompleta: 'img/infografia-5.jpeg' },
-    autoestima: { type: 'infografia', title: 'Baja autoestima', desc: 'Entenderla es el primer paso para fortalecerla', imgSrc: 'img/infografia-7.jpeg', imgAlt: 'Infografía Autoestima', linkVerCompleta: 'img/infografia-7.jpeg' },
-    estres: { type: 'infografia', title: 'Estrés', desc: 'Entenderlo es el primer paso para gestionarlo', imgSrc: 'img/infografia-4.jpeg', imgAlt: 'Infografía Estrés', linkVerCompleta: 'img/infografia-4.jpeg' },
-    relaciones: { type: 'infografia', title: 'Problemas de pareja', desc: 'Entenderlos es el primer paso para mejorar la relación', imgSrc: 'img/infografia-9.jpeg', imgAlt: 'Infografía Pareja', linkVerCompleta: 'img/infografia-9.jpeg' },
-    adherencia: { type: 'infografia', title: 'Adherencia terapéutica', desc: 'Tu compromiso con el proceso es clave para tu bienestar', imgSrc: 'img/infografia-1.jpeg', imgAlt: 'Infografía Adherencia', linkVerCompleta: 'img/infografia-1.jpeg' }
+    adherencia:           { imgSrc: 'img/infografia-1.jpeg', title: 'Adherencia terapéutica', desc: 'Tu compromiso con el proceso es clave para tu bienestar.' },
+    ansiedad:             { imgSrc: 'img/infografia-2.jpeg', title: 'Ansiedad', desc: 'Conocerla es el primer paso para transformarla.' },
+    ataquePanico:         { imgSrc: 'img/infografia-3.jpeg', title: 'Ataques de pánico', desc: 'Entender lo que ocurre para recuperar tu calma.' },
+    estres:               { imgSrc: 'img/infografia-4.jpeg', title: 'Estrés', desc: 'Entenderlo es el primer paso para gestionarlo.' },
+    depresion:            { imgSrc: 'img/infografia-5.jpeg', title: 'Depresión', desc: 'Entenderla es el primer paso para sentirte mejor.' },
+    duelo:                { imgSrc: 'img/infografia-6.jpeg', title: 'Duelo', desc: 'Permítete sentir para poder sanar.' },
+    bajaAutoestima:       { imgSrc: 'img/infografia-7.jpeg', title: 'Baja autoestima', desc: 'Entenderla es el primer paso para fortalecerla.' },
+    regulacionEmocional:  { imgSrc: 'img/infografia-8.jpeg', title: 'Regulación emocional', desc: 'Aprender a gestionar lo que sientes es aprender a vivir mejor.' },
+    problemaPareja:       { imgSrc: 'img/infografia-9.jpeg', title: 'Problemas de pareja', desc: 'Entenderlos es el primer paso para mejorar la relación.' },
+    dependenciaEmocional: { imgSrc: 'img/infografia-10.jpeg', title: 'Dependencia emocional', desc: 'Entenderla es el primer paso para recuperar tu bienestar.' },
+    problemaFamiliar:     { imgSrc: 'img/infografia-11.jpeg', title: 'Problemas familiares', desc: 'Entenderlos es el primer paso para construir relaciones más sanas.' },
   },
   guias: {
-    emocional: { type: 'guia', title: 'Guía de afrontamiento emocional', desc: 'Estrategias prácticas y basadas en evidencia para atravesar momentos difíciles.', pdfHref: '#', paginas: '8 páginas' },
-    psicologo: { type: 'guia', title: 'Cómo elegir un psicólogo', desc: 'Qué preguntas hacerse, qué señales observar y cómo saber si el vínculo es adecuado.', pdfHref: '#', paginas: '6 páginas' },
-    tiempo: { type: 'guia', title: 'Manejo emocional diario', desc: 'Técnicas de regulación emocional que puedes aplicar entre sesiones.', pdfHref: '#', paginas: '10 páginas' }
-  },
-  psicologos: {
-    MR: { type: 'psicologo', iniciales: 'MR', nombre: 'Lic. María Rodríguez', especialidad: 'Ansiedad · Autoestima', modalidad: 'Virtual y presencial', descripcion: 'Especialista en terapia cognitivo-conductual con enfoque empático y personalizado.' },
-    CP: { type: 'psicologo', iniciales: 'CP', nombre: 'Lic. Carlos Paredes', especialidad: 'Depresión · Estrés', modalidad: 'Presencial', descripcion: 'Psicólogo clínico con formación en terapia humanista. Su estilo dinámico y directo facilita avances reales.' },
-    AL: { type: 'psicologo', iniciales: 'AL', nombre: 'Lic. Andrea Luna', especialidad: 'Relaciones · Estrés', modalidad: 'Virtual', descripcion: 'Especialista en terapia sistémica y relaciones interpersonales. Crea espacios de confianza.' }
+    violenciaPsico:    { imgSrc: 'img/guia1.jpeg', title: 'Violencia Psicológica', desc: 'Técnica para identificar el desequilibrio y tomar acciones para recuperar tu bienestar.' },
+    sexualidadSalud:   { imgSrc: 'img/guia2.jpeg', title: 'Sexualidad y salud sexual', desc: 'Herramientas para comprender y cuidar tu salud sexual.' },
+    adicciones:        { imgSrc: 'img/guia3.jpeg', title: 'Adicciones', desc: 'Técnicas para identificar desencadenantes y recuperar tu libertad.' },
+    problemaSueño:     { imgSrc: 'img/guia4.jpeg', title: 'Bitácora del descanso y sueño reparador', desc: 'Registra patrones de sueño e identifica desencadenantes para mejorar tu descanso.' },
+    ira:               { imgSrc: 'img/guia5.jpeg', title: 'Bitácora del volcán emocional', desc: 'Registra e identifica la ira antes de que estalle. Desarrolla estrategias de calma.' },
+    autolesiones:      { imgSrc: 'img/guia6.jpeg', title: 'Autolesiones y búsqueda de ayuda', desc: 'Crea un plan de seguridad y fortalece tu red de apoyo.' },
+    ansiedadSocial:    { imgSrc: 'img/guia7.jpeg', title: 'Ansiedad social: exposición gradual', desc: 'Enfrenta miedos sociales de manera progresiva, paso a paso.' },
+    proyectoVida:      { imgSrc: 'img/guia8.jpeg', title: 'Proyecto de vida y toma de decisiones', desc: 'Alinea tus valores, identifica tus metas y toma decisiones conscientes.' },
   }
 };
 
-function getRecommendations(respuestas) {
-  // Extraemos las respuestas del formulario
-  const areaSeleccionada = respuestas.area;
-  const modalidadSeleccionada = respuestas.modalidad;
-  const generoSeleccionado = respuestas.genero;
+const PSICOLOGOS = [
+  {
+    iniciales: 'VR',
+    imgSrc: 'img/psico 1.jpeg',
+    nombre: 'Dr. Victor Ríos Cubas',
+    especialidad: 'Habilidades sociales · Desarrollo organizacional',
+    modalidad: 'Presencial',
+    descripcion: 'Doctor en Psicología. Gerente general de Liderando Kambios. Docente investigador y consultor internacional.'
+  },
+  {
+    iniciales: 'MD',
+    imgSrc: 'img/psico 2.jpeg',
+    nombre: 'Lic. Miriam Doza Damia',
+    especialidad: 'Bienestar emocional · Protección y vulnerabilidad',
+    modalidad: 'Presencial',
+    descripcion: 'Psicóloga con experiencia en el ámbito universitario y en el Centro Emergencia Mujer. Docente en Universidad Continental.'
+  },
+  {
+    iniciales: 'BJ',
+    imgSrc: 'img/psico 3.jpeg',
+    nombre: 'Dra. Brigitte Jacobo Orellana',
+    especialidad: 'Psicología organizacional · Recursos humanos',
+    modalidad: 'Presencial',
+    descripcion: 'Magíster en Recursos Humanos. Doctora en Ciencias de la Educación. Psicóloga Organizacional y docente universitaria.'
+  },
+  {
+    iniciales: 'JS',
+    imgSrc: 'img/psico 4.jpeg',
+    nombre: 'Dr. Jorge Salcedo Chuquimantari',
+    especialidad: 'Gestión académica · Orientación psicológica',
+    modalidad: 'Presencial',
+    descripcion: 'Director del Programa de Psicología en Universidad Continental. Auditor ISO 19011:2018. Docente universitario.'
+  }
+];
 
-  let recomendaciones = [];
+// Nombres legibles por área
+const NOMBRES_AREA = {
+  adherencia: 'Adherencia terapéutica', ansiedad: 'Ansiedad', ataquePanico: 'Ataques de pánico',
+  estres: 'Estrés', depresion: 'Depresión', duelo: 'Duelo', bajaAutoestima: 'Baja autoestima',
+  regulacionEmocional: 'Regulación emocional', problemaPareja: 'Problemas de pareja',
+  dependenciaEmocional: 'Dependencia emocional', problemaFamiliar: 'Problemas familiares',
+  violenciaPsico: 'Violencia psicológica', sexualidadSalud: 'Sexualidad y salud sexual',
+  tdah: 'TDAH', tea: 'TEA', tca: 'Trastornos de la conducta alimentaria',
+  adicciones: 'Adicciones', habilidadSociales: 'Habilidades sociales',
+  bullying: 'Acoso escolar y bullying', burnout: 'Burnout', problemaSueño: 'Problemas de sueño',
+  ira: 'Manejo de la ira', autolesiones: 'Autolesiones', ansiedadSocial: 'Ansiedad social',
+  proyectoVida: 'Proyecto de vida'
+};
 
-  // 1. BASE DE DATOS DE RECURSOS POR ÁREA
-  // Mapeamos exactamente los 'value' de tu HTML con contenido específico.
-  const recursosPorArea = {
-    adherencia: [
-      { type: 'consejo', icon: '🧠', title: 'El valor de la constancia', desc: 'La terapia es un proceso que requiere tiempo. Celebra tus pequeños avances diarios.' },
-      { type: 'guia', title: 'Guía de Adherencia', desc: 'Pasos para no abandonar tu tratamiento psicológico.', paginas: '5 págs', pdfHref: '#descarga' }
-    ],
-    ansiedad: [
-      { type: 'video', youtubeId: '81-J0oP6-aU', title: 'Entendiendo la ansiedad', desc: 'Aprende qué es la ansiedad y por qué nuestro cuerpo reacciona así.', autor: 'ADHIERE' },
-      { type: 'consejo', icon: '🫁', title: 'Técnica 4-7-8', desc: 'Inhala por 4 segundos, mantén 7, exhala en 8. Repítelo para calmar tu sistema nervioso.' }
-    ],
-    ansiedadSocial: [
-      { type: 'consejo', icon: '🗣️', title: 'Exposición gradual', desc: 'No te forces. Empieza interactuando en grupos muy pequeños y de alta confianza.' }
-    ],
-    ataquePanico: [
-      { type: 'consejo', icon: '🧊', title: 'Cambio de temperatura', desc: 'Sostener un hielo o lavarse la cara con agua fría ayuda a detener un ataque de pánico.' }
-    ],
-    estres: [
-      { type: 'infografia', title: 'Curva del Estrés', desc: 'Identifica si tu estrés es productivo o perjudicial.', imgSrc: 'img/estres.jpg', linkVerCompleta: '#', imgAlt: 'Gráfico de estrés' }
-    ],
-    depresion: [
-      { type: 'video', youtubeId: 'ejemplo123', title: 'Mitos sobre la depresión', desc: 'Desmitificando una de las condiciones más comunes.', autor: 'Equipo ADHIERE' },
-      { type: 'consejo', icon: '☀️', title: 'Activación conductual', desc: 'Hacer una pequeña tarea (como hacer la cama) puede iniciar una cadena de bienestar.' }
-    ],
-    bajaAutoestima: [
-      { type: 'video', youtubeId: 'oO_xT3H7OZs', title: 'Fortaleciendo el amor propio', desc: 'Estrategias diarias para mejorar cómo te ves y te hablas.', autor: 'Psicología Activa' }
-    ],
-    regulacionEmocional: [
-      { type: 'guia', title: 'Diario de Emociones', desc: 'Plantilla en PDF para registrar y entender tus detonantes.', paginas: '12 págs', pdfHref: '#descarga' }
-    ],
-    problemaPareja: [
-      { type: 'consejo', icon: '💬', title: 'Comunicación Asertiva', desc: 'Habla desde el "Yo me siento..." en lugar del "Tú siempre haces...".' }
-    ],
-    dependenciaEmocional: [
-      { type: 'consejo', icon: '🌱', title: 'Cultiva tu individualidad', desc: 'Retoma un pasatiempo que solías disfrutar a solas antes de estar en pareja.' }
-    ],
-    tdah: [
-      { type: 'infografia', title: 'Cerebro TDAH', desc: 'Cómo funciona la dopamina y la atención en adultos.', imgSrc: 'img/tdah.jpg', linkVerCompleta: '#', imgAlt: 'Infografía TDAH' }
-    ],
-    tea: [
-      { type: 'consejo', icon: '🧩', title: 'Sensorialidad', desc: 'Reconocer y respetar tus límites sensoriales es fundamental para tu bienestar.' }
-    ],
-    burnout: [
-      { type: 'guia', title: 'Prevención del Burnout', desc: 'Límites saludables entre el trabajo, el estudio y el descanso.', paginas: '8 págs', pdfHref: '#descarga' }
-    ],
-    problemaSueño: [
-      { type: 'consejo', icon: '🌙', title: 'Higiene del sueño', desc: 'Evita pantallas al menos 1 hora antes de dormir y mantén tu habitación a oscuras.' }
-    ]
-    // NOTA: Puedes seguir agregando el resto de values (ira, duelo, adicciones, etc.) siguiendo este mismo formato.
+function buildVideoRec(area) {
+  const v = RECURSOS.videos[area];
+  if (!v) return null;
+  return {
+    type: 'video',
+    youtubeId: v.youtubeId,
+    title: v.title,
+    desc: v.desc,
+    duracion: v.duracion,
+    autor: v.autor
   };
+}
 
-  // 2. BUSCAR RECURSOS SEGÚN EL ÁREA ELEGIDA
-  if (areaSeleccionada && recursosPorArea[areaSeleccionada]) {
-    // Si el área existe en nuestra base de datos, agregamos sus recursos
-    recomendaciones = recomendaciones.concat(recursosPorArea[areaSeleccionada]);
-  } else {
-    // Fallback: Si eligió un área que aún no tiene recursos o hay un error
+function buildInfografiaRec(area) {
+  const i = RECURSOS.infografias[area];
+  if (!i) return null;
+  return {
+    type: 'infografia',
+    imgSrc: i.imgSrc,
+    imgAlt: i.title,
+    title: i.title,
+    desc: i.desc,
+    linkVerCompleta: i.imgSrc
+  };
+}
+
+function buildGuiaRec(area) {
+  const g = RECURSOS.guias[area];
+  if (!g) return null;
+  return {
+    type: 'guia',
+    imgSrc: g.imgSrc,
+    title: g.title,
+    desc: g.desc,
+    paginas: 'Guía práctica',
+    pdfHref: g.imgSrc
+  };
+}
+
+function buildPsicologoRec(index) {
+  const p = PSICOLOGOS[index];
+  return {
+    type: 'psicologo',
+    iniciales: p.iniciales,
+    imgSrc: p.imgSrc,
+    nombre: p.nombre,
+    especialidad: p.especialidad,
+    modalidad: p.modalidad,
+    descripcion: p.descripcion
+  };
+}
+
+function getRecommendations(respuestas) {
+  const area        = respuestas.area;
+  const barrera     = respuestas.barrera;
+  const primeraVez  = respuestas.primera_vez;
+  const abandono    = respuestas.abandono;
+  const recomendaciones = [];
+
+  // 1. VIDEO del área
+  const video = buildVideoRec(area);
+  if (video) recomendaciones.push(video);
+
+  // 2. INFOGRAFÍA del área
+  const info = buildInfografiaRec(area);
+  if (info) recomendaciones.push(info);
+
+  // 3. GUÍA del área
+  const guia = buildGuiaRec(area);
+  if (guia) recomendaciones.push(guia);
+
+  // 4. CONSEJO EXTRA según barrera del formulario
+  const consejosPorBarrera = {
+  tiempo: {
+    icon: 'bi bi-calendar-check', title: 'Organiza tu semana',
+    desc: 'Reserva un horario fijo semanal para tu terapia...'
+  },
+  desmotivacion: {
+    icon: 'bi bi-graph-up-arrow', title: 'Los avances no siempre se ven',
+    desc: 'La desmotivación es parte del proceso...'
+  },
+  economica: {
+    icon: 'bi bi-hospital', title: 'Atención psicológica accesible',
+    desc: 'El MINSA, hospitales públicos y consultorios universitarios...'
+  },
+  avances: {
+    icon: 'bi bi-bullseye', title: 'Define metas concretas',
+    desc: 'Pídele a tu terapeuta que establezcan objetivos medibles...'
+  },
+  mala_exp: {
+    icon: 'bi bi-search-heart', title: 'Cada terapeuta es diferente',
+    desc: 'Una mala experiencia no define a toda la terapia...'
+  },
+  psicologo: {
+    icon: 'bi bi-people', title: 'Primera sesión exploratoria',
+    desc: 'Muchos psicólogos ofrecen una primera sesión sin compromiso...'
+  },
+  mitos: {
+    icon: 'bi bi-shield-check', title: 'Ir a terapia es fortaleza',
+    desc: 'Buscar apoyo psicológico no es debilidad...'
+  },
+  otro: {
+    icon: 'bi bi-chat-heart', title: 'Tu proceso es único',
+    desc: 'No existe un camino estándar en la terapia...'
+  }
+};
+
+  if (barrera && consejosPorBarrera[barrera]) {
+    recomendaciones.push({ type: 'consejo', ...consejosPorBarrera[barrera] });
+  }
+
+  // 5. CONSEJO EXTRA si es primera vez
+  if (primeraVez === 'si') {
     recomendaciones.push({
-      type: 'consejo', icon: '💡', title: 'Exploración inicial',
-      desc: 'El primer paso ya lo diste. Un profesional evaluará a fondo tus necesidades en esta área.'
+      type: 'consejo', icon: 'bi bi-hand-wave',
+      title: 'Bienvenido/a a este primer paso',
+      desc: 'Buscar apoyo por primera vez requiere valentía. Tu bienestar merece esta oportunidad. Un profesional te guiará desde el inicio.'
     });
   }
 
-  // 3. LÓGICA DEL PSICÓLOGO (Simulación)
-  // Siempre recomendamos un psicólogo al final, adaptado un poco a sus preferencias.
-  let textoModalidad = modalidadSeleccionada === 'ambas' ? 'Presencial y Virtual' : modalidadSeleccionada;
-  
-  recomendaciones.push({
-    type: 'psicologo',
-    iniciales: 'PA',
-    nombre: 'Psicólogo(a) ADHIERE',
-    especialidad: 'Especialista en ' + obtenerNombreArea(areaSeleccionada),
-    modalidad: textoModalidad || 'Modalidad a convenir',
-    descripcion: `Profesional con enfoque ${respuestas.estilo || 'terapéutico adaptado a ti'}. Seleccionado basándonos en tu preferencia por atención de ${generoSeleccionado === 'indiferente' ? 'calidad' : 'un/una ' + generoSeleccionado}.`
-  });
+  // 6. CONSEJO si abandonó antes
+  if (abandono === 'si') {
+    recomendaciones.push({
+      type: 'consejo', icon: 'bi bi-arrow-repeat',
+      title: 'Retomar siempre es posible',
+      desc: 'Haber abandonado antes no significa fracaso. Muchas personas retoman la terapia y logran avances significativos la segunda vez.'
+    });
+  }
+
+  // 7. Si no hay ningún recurso de área, consejo genérico
+  if (recomendaciones.length === 0) {
+    recomendaciones.push({
+      type: 'consejo', icon: 'bi bi-lightbulb',
+      title: 'Exploración inicial',
+      desc: `El primer paso ya lo diste. Un profesional evaluará tus necesidades en el área de ${NOMBRES_AREA[area] || 'tu elección'}.`
+    });
+  }
+
+  // 8. PSICÓLOGO — rotamos entre los 4 según área
+  const areasList = Object.keys(NOMBRES_AREA);
+  const idx = Math.max(0, areasList.indexOf(area)) % PSICOLOGOS.length;
+  recomendaciones.push(buildPsicologoRec(idx));
 
   return recomendaciones;
 }
@@ -286,63 +418,71 @@ function buildRecCard(r) {
   }
 
   if (r.type === 'guia') {
-    return `
-      <div class="rec-card rec-card--guia">
-        <div class="guia-preview">
-          <div class="guia-icon-wrap">📄</div>
-          <div class="guia-meta-wrap">
-            <span class="guia-tipo">PDF · ${r.paginas}</span>
-            <span class="guia-autor">Equipo ADHIERE</span>
+      return `
+      <div class="rec-card rec-card--infografia">
+        <div class="rec-infografia-wrap" style="cursor:pointer;">
+          <img src="${r.imgSrc}" alt="${r.title}" />
+          <div class="infografia-overlay">
+            <a href="${r.pdfHref}" class="btn-ver-infografia" target="_blank">Ver guía</a>
           </div>
         </div>
         <div class="rec-card-body">
           <span class="resource-badge resource-badge--guia">📘 Guía práctica</span>
           <h4>${r.title}</h4>
           <p>${r.desc}</p>
-          <a href="${r.pdfHref}" class="btn-small" download>⬇ Descargar PDF</a>
         </div>
       </div>`;
   }
+    
 
-  if (r.type === 'psicologo') {
-    return `
-      <div class="rec-card rec-card--psicologo">
-        <div class="rec-psico-header">
-          <div class="psico-avatar">${r.iniciales}</div>
-          <div>
-            <h4>${r.nombre}</h4>
-            <span class="psico-tag">${r.especialidad}</span>
-            <span class="psico-tag modal-tag">${r.modalidad}</span>
-          </div>
+if (r.type === 'psicologo') {
+  const avatar = r.imgSrc
+    ? `<img src="${r.imgSrc}" alt="${r.nombre}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />`
+    : r.iniciales;
+  return `
+    <div class="rec-card rec-card--psicologo">
+      <div class="rec-psico-header">
+        <div class="psico-avatar">${avatar}</div>
+        <div>
+          <h4>${r.nombre}</h4>
         </div>
-        <p class="rec-psico-desc">${r.descripcion}</p>
-        <a href="#contacto" class="btn-small">Solicitar información</a>
-      </div>`;
-  }
+      </div>
+      <p class="rec-psico-desc">${r.descripcion}</p>
+      <a href="#psicologos" class="btn-small">Ver perfil completo</a>
+    </div>`;
+}
 
   if (r.type === 'consejo') {
     return `
-      <div class="rec-card rec-card--consejo">
-        <div class="rec-card-icon-box">
-          <span class="rec-card-icon">${r.icon}</span>
-        </div>
-        <div class="rec-card-body">
-          <span class="resource-badge resource-badge--consejo">💡 Consejo ADHIERE</span>
-          <h4>${r.title}</h4>
-          <p>${r.desc}</p>
-        </div>
-      </div>`;
+    <div class="rec-card rec-card--consejo">
+      <div class="rec-card-icon"><i class="${r.icon || 'bi bi-lightbulb'}"></i></div>
+      <div class="rec-card-body">
+        <span class="resource-badge resource-badge--consejo">Consejo</span>
+        <h4>${r.title}</h4>
+        <p>${r.desc}</p>
+      </div>
+    </div>`;
   }
 }
 
 function buildResultHTML(recs) {
   return `<div class="result-recs">
-    ${recs.map(r => `
-      <div class="result-rec-item">
-        <h4>${r.type === 'consejo' ? r.icon + ' ' : ''}${r.title}</h4>
-        <p>${r.desc}</p>
-      </div>
-    `).join('')}
+    ${recs.map(r => {
+      // Ícono según tipo
+      const iconos = {
+        video:      'bi bi-play-circle-fill',
+        infografia: 'bi bi-bar-chart-fill',
+        guia:       'bi bi-book-fill',
+        psicologo:  'bi bi-person-circle',
+        consejo:    r.icon || 'bi bi-lightbulb'
+      };
+      const icono = iconos[r.type] || 'bi bi-lightbulb';
+      return `
+        <div class="result-rec-item">
+          <h4><i class="${icono}"></i> ${r.title || r.nombre}</h4>
+          <p>${r.desc || r.descripcion || ''}</p>
+        </div>`;
+    }).join('')}
   </div>`;
 }
 

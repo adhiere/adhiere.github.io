@@ -357,14 +357,15 @@ img {
 
 /* Responsivo básico para pantallas móviles */
 @media (max-width: 768px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    /* Pasa a una sola columna en celulares */
-    gap: 2.5rem;
+  .hero {
+    padding: 100px 1.5rem 70px;
+    min-height: auto; 
   }
 
-  .hero {
-    padding-top: 100px;
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
   }
 }
 
@@ -770,6 +771,7 @@ input[type="email"]:focus {
     flex: 0 0 100%;
   }
 }
+
 
 /* Card de infografía */
 .info-card {
@@ -1539,6 +1541,7 @@ input[type="email"]:focus {
   }
 }
 
+
 /* ---- LIGHTBOX / MODAL ---- */
 .lightbox {
   display: none;
@@ -1697,4 +1700,144 @@ input[type="email"]:focus {
   display: flex;
   align-items: center;
   width: 100%;
+}
+
+@media (max-width: 480px) {
+  /* Hero */
+  .hero {
+    padding: 90px 1rem 60px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .hero-badges {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Navbar */
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  /* Barreras */
+  .barriers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .barrier-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Formulario */
+  .form-wrap {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .step-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .radio-opt {
+    font-size: 0.85rem;
+    padding: 0.55rem 0.75rem;
+  }
+
+  /* Secciones generales */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-sub {
+    font-size: 0.9rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  /* Psicólogos */
+  .psicos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .psico-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+  }
+
+  .psico-avatar {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .psico-card h3 {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .psico-card p {
+    font-size: 0.8rem;
+  }
+
+  /* Recomendaciones */
+  .recs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rec-card--consejo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Carrusel flechas */
+  .info-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  /* Resource grid */
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Emergencias */
+  .emergency-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer {
+    padding: 40px 1rem 0;
+  }
+
+  /* Pestañas psicoeducación */
+  .psico-tabs {
+    gap: 0.35rem;
+  }
+
+  .psico-tab {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+  }
 }
