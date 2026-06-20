@@ -1092,7 +1092,7 @@ input[type="email"]:focus {
 
 .psicos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(2px, 2fr));
   gap: 2rem;
 }
 
@@ -1112,8 +1112,8 @@ input[type="email"]:focus {
 }
 
 .psico-avatar {
-  width: 64px;
-  height: 64px;
+  width: 120px;
+  height: 120px;
   background: linear-gradient(135deg, var(--purple-700), var(--purple-400));
   border-radius: 50%;
   display: flex;
@@ -1122,7 +1122,7 @@ input[type="email"]:focus {
   color: var(--white);
   font-weight: 700;
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .psico-card h3 {
@@ -1664,4 +1664,37 @@ input[type="email"]:focus {
   transform: rotate(-45deg); /* Inclinación clásica de marca de agua */
   overflow: hidden;
   white-space: nowrap;
+}
+
+/* Oculta el texto extra inicialmente */
+.more-text {
+  display: none;
+}
+
+/* Estilos para el botón Ver más */
+.read-more-btn {
+  display: inline-block;
+  color: #8a5cf6; /* Puedes cambiarlo por tu variable var(--purple-700) o var(--lila) */
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.read-more-btn:hover {
+  text-decoration: underline;
+  color: #6d28d9; /* Tono morado más oscuro al pasar el cursor */
+}
+
+/* Clase dinámica que activará JavaScript */
+.more-text.show {
+  display: inline;
+}
+
+.guia-carousel-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }

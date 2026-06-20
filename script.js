@@ -149,68 +149,102 @@ const resourcesCatalog = {
   }
 };
 
-function getRecommendations(responses) {
-  const recs = [];
-  const addedTitles = new Set(); // Para evitar recursos duplicados
+function getRecommendations(respuestas) {
+  // Extraemos las respuestas del formulario
+  const areaSeleccionada = respuestas.area;
+  const modalidadSeleccionada = respuestas.modalidad;
+  const generoSeleccionado = respuestas.genero;
 
-  const addRec = (item) => {
-    if (item && !addedTitles.has(item.title)) {
-      recs.push(item);
-      addedTitles.add(item.title);
-    }
+  let recomendaciones = [];
+
+  // 1. BASE DE DATOS DE RECURSOS POR ÁREA
+  // Mapeamos exactamente los 'value' de tu HTML con contenido específico.
+  const recursosPorArea = {
+    adherencia: [
+      { type: 'consejo', icon: '🧠', title: 'El valor de la constancia', desc: 'La terapia es un proceso que requiere tiempo. Celebra tus pequeños avances diarios.' },
+      { type: 'guia', title: 'Guía de Adherencia', desc: 'Pasos para no abandonar tu tratamiento psicológico.', paginas: '5 págs', pdfHref: '#descarga' }
+    ],
+    ansiedad: [
+      { type: 'video', youtubeId: '81-J0oP6-aU', title: 'Entendiendo la ansiedad', desc: 'Aprende qué es la ansiedad y por qué nuestro cuerpo reacciona así.', autor: 'ADHIERE' },
+      { type: 'consejo', icon: '🫁', title: 'Técnica 4-7-8', desc: 'Inhala por 4 segundos, mantén 7, exhala en 8. Repítelo para calmar tu sistema nervioso.' }
+    ],
+    ansiedadSocial: [
+      { type: 'consejo', icon: '🗣️', title: 'Exposición gradual', desc: 'No te forces. Empieza interactuando en grupos muy pequeños y de alta confianza.' }
+    ],
+    ataquePanico: [
+      { type: 'consejo', icon: '🧊', title: 'Cambio de temperatura', desc: 'Sostener un hielo o lavarse la cara con agua fría ayuda a detener un ataque de pánico.' }
+    ],
+    estres: [
+      { type: 'infografia', title: 'Curva del Estrés', desc: 'Identifica si tu estrés es productivo o perjudicial.', imgSrc: 'img/estres.jpg', linkVerCompleta: '#', imgAlt: 'Gráfico de estrés' }
+    ],
+    depresion: [
+      { type: 'video', youtubeId: 'ejemplo123', title: 'Mitos sobre la depresión', desc: 'Desmitificando una de las condiciones más comunes.', autor: 'Equipo ADHIERE' },
+      { type: 'consejo', icon: '☀️', title: 'Activación conductual', desc: 'Hacer una pequeña tarea (como hacer la cama) puede iniciar una cadena de bienestar.' }
+    ],
+    bajaAutoestima: [
+      { type: 'video', youtubeId: 'oO_xT3H7OZs', title: 'Fortaleciendo el amor propio', desc: 'Estrategias diarias para mejorar cómo te ves y te hablas.', autor: 'Psicología Activa' }
+    ],
+    regulacionEmocional: [
+      { type: 'guia', title: 'Diario de Emociones', desc: 'Plantilla en PDF para registrar y entender tus detonantes.', paginas: '12 págs', pdfHref: '#descarga' }
+    ],
+    problemaPareja: [
+      { type: 'consejo', icon: '💬', title: 'Comunicación Asertiva', desc: 'Habla desde el "Yo me siento..." en lugar del "Tú siempre haces...".' }
+    ],
+    dependenciaEmocional: [
+      { type: 'consejo', icon: '🌱', title: 'Cultiva tu individualidad', desc: 'Retoma un pasatiempo que solías disfrutar a solas antes de estar en pareja.' }
+    ],
+    tdah: [
+      { type: 'infografia', title: 'Cerebro TDAH', desc: 'Cómo funciona la dopamina y la atención en adultos.', imgSrc: 'img/tdah.jpg', linkVerCompleta: '#', imgAlt: 'Infografía TDAH' }
+    ],
+    tea: [
+      { type: 'consejo', icon: '🧩', title: 'Sensorialidad', desc: 'Reconocer y respetar tus límites sensoriales es fundamental para tu bienestar.' }
+    ],
+    burnout: [
+      { type: 'guia', title: 'Prevención del Burnout', desc: 'Límites saludables entre el trabajo, el estudio y el descanso.', paginas: '8 págs', pdfHref: '#descarga' }
+    ],
+    problemaSueño: [
+      { type: 'consejo', icon: '🌙', title: 'Higiene del sueño', desc: 'Evita pantallas al menos 1 hora antes de dormir y mantén tu habitación a oscuras.' }
+    ]
+    // NOTA: Puedes seguir agregando el resto de values (ira, duelo, adicciones, etc.) siguiendo este mismo formato.
   };
 
-  // 1. REGLA POR ÁREA (Añade 1 Video y 1 Infografía específica a su problema)
-  if (responses.area && resourcesCatalog.videos[responses.area]) {
-    addRec(resourcesCatalog.videos[responses.area]);
-    addRec(resourcesCatalog.infografias[responses.area]);
+  // 2. BUSCAR RECURSOS SEGÚN EL ÁREA ELEGIDA
+  if (areaSeleccionada && recursosPorArea[areaSeleccionada]) {
+    // Si el área existe en nuestra base de datos, agregamos sus recursos
+    recomendaciones = recomendaciones.concat(recursosPorArea[areaSeleccionada]);
+  } else {
+    // Fallback: Si eligió un área que aún no tiene recursos o hay un error
+    recomendaciones.push({
+      type: 'consejo', icon: '💡', title: 'Exploración inicial',
+      desc: 'El primer paso ya lo diste. Un profesional evaluará a fondo tus necesidades en esta área.'
+    });
   }
 
-  // 2. REGLA POR BARRERA (Añade soluciones a su dificultad)
-  switch (responses.barrera) {
-    case 'tiempo':
-      addRec(resourcesCatalog.guias.tiempo);
-      addRec({ type: 'consejo', icon: '📱', title: 'Activa recordatorios', desc: 'Programar alarmas 24h antes de tus sesiones reduce la posibilidad de faltar.' });
-      break;
-    case 'desmotivacion':
-    case 'avances':
-      addRec(resourcesCatalog.videos.adherencia);
-      addRec(resourcesCatalog.guias.emocional);
-      break;
-    case 'economica':
-      addRec({ type: 'consejo', icon: '🏥', title: 'Opciones accesibles', desc: 'Recuerda que existen centros CSMC del MINSA y consultorios universitarios gratuitos en tu ciudad.' });
-      break;
-    case 'mala_exp':
-    case 'psicologo':
-      addRec(resourcesCatalog.guias.psicologo);
-      // Recomendamos psicólogos según su preferencia de modalidad (si la marcó)
-      if (responses.modalidad === 'presencial') {
-        addRec(resourcesCatalog.psicologos.CP);
-      } else if (responses.modalidad === 'virtual') {
-        addRec(resourcesCatalog.psicologos.AL);
-      } else {
-        addRec(resourcesCatalog.psicologos.MR);
-      }
-      break;
-    case 'mitos':
-      addRec(resourcesCatalog.videos.mitos);
-      addRec({ type: 'consejo', icon: '🧠', title: 'Fortaleza mental', desc: 'Buscar apoyo psicológico es un signo de inteligencia emocional, no de debilidad.' });
-      break;
-  }
+  // 3. LÓGICA DEL PSICÓLOGO (Simulación)
+  // Siempre recomendamos un psicólogo al final, adaptado un poco a sus preferencias.
+  let textoModalidad = modalidadSeleccionada === 'ambas' ? 'Presencial y Virtual' : modalidadSeleccionada;
+  
+  recomendaciones.push({
+    type: 'psicologo',
+    iniciales: 'PA',
+    nombre: 'Psicólogo(a) ADHIERE',
+    especialidad: 'Especialista en ' + obtenerNombreArea(areaSeleccionada),
+    modalidad: textoModalidad || 'Modalidad a convenir',
+    descripcion: `Profesional con enfoque ${respuestas.estilo || 'terapéutico adaptado a ti'}. Seleccionado basándonos en tu preferencia por atención de ${generoSeleccionado === 'indiferente' ? 'calidad' : 'un/una ' + generoSeleccionado}.`
+  });
 
-  // 3. REGLA POR HISTORIAL DE ABANDONO (Añade refuerzo visual si antes dejó la terapia)
-  if (responses.abandono === 'si') {
-    addRec(resourcesCatalog.infografias.adherencia);
-  }
+  return recomendaciones;
+}
 
-  // 4. FALLBACK: Si no seleccionó nada clave, se muestra un kit básico
-  if (recs.length === 0) {
-    addRec(resourcesCatalog.guias.emocional);
-    addRec({ type: 'consejo', icon: '🌟', title: 'Tu proceso importa', desc: 'Cada persona avanza a su propio ritmo. Lo importante es dar el primer paso.' });
-    addRec(resourcesCatalog.psicologos.AL);
-  }
-
-  return recs;
+function obtenerNombreArea(valor) {
+  const nombres = {
+    adherencia: "Adherencia terapéutica", ansiedad: "Ansiedad", ataquePanico: "Ataques de pánico",
+    estres: "Manejo del Estrés", depresion: "Depresión", duelo: "Proceso de Duelo",
+    bajaAutoestima: "Autoestima", regulacionEmocional: "Regulación emocional", tdah: "Neurodivergencia",
+    burnout: "Burnout", problemaSueño: "Higiene del Sueño"
+    // Agrega aquí las demás si quieres que el texto de la especialidad del psicólogo sea exacto
+  };
+  return nombres[valor] || "Salud Mental";
 }
 
 function buildRecCard(r) {
@@ -545,6 +579,103 @@ document.querySelectorAll('.barrier-card, .resource-card, .psico-card, .rec-card
     }
     buildDots();
     updateCarousel();
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+})();
+
+// ============================================
+// CARRUSEL DE GUÍAS PRÁCTICAS (DUPLICADO INDEPENDIENTE)
+// ============================================
+(function () {
+  const VISIBLE = 3;
+  let current = 0;
+  let total = 0;
+  let slidesPerView = VISIBLE;
+
+  function getSlidesPerView() {
+    if (window.innerWidth <= 500) return 1;
+    if (window.innerWidth <= 768) return 2;
+    return 3;
+  }
+
+  function initCarousel() {
+    const track = document.getElementById('guiaTrack');
+    if (!track) return;
+
+    total = track.querySelectorAll('.info-slide').length;
+    slidesPerView = getSlidesPerView();
+    current = 0;
+
+    buildDots();
+    updateCarousel();
+  }
+
+
+  function updateCarousel() {
+    const track = document.getElementById('guiaTrack');
+    if (!track) return;
+
+    slidesPerView = getSlidesPerView();
+    const gap = 20; 
+    const containerW = track.parentElement.offsetWidth;
+
+    const slideW = (containerW - (slidesPerView - 1) * gap) / slidesPerView;
+
+    const slides = track.querySelectorAll('.info-slide');
+    slides.forEach(slide => {
+      slide.style.flex = `0 0 ${slideW}px`;
+    });
+
+    const offset = current * (slideW + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    const dotsContainer = document.getElementById('guiaDots');
+    if (dotsContainer) {
+      dotsContainer.querySelectorAll('.info-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === Math.floor(current / slidesPerView));
+      });
+    }
+
+    const prev = document.querySelector('.guia-carousel-wrap .info-arrow--prev');
+    const next = document.querySelector('.guia-carousel-wrap .info-arrow--next');
+    if (prev) prev.disabled = current === 0;
+    if (next) next.disabled = current >= total - slidesPerView;
+  }
+
+  function goToPage(page) {
+    current = page * slidesPerView;
+    updateCarousel();
+  }
+
+  window.guiaPrev = function () {
+    current = Math.max(0, current - slidesPerView);
+    updateCarousel();
+  };
+
+  window.guiaNext = function () {
+    current = Math.min(total - slidesPerView, current + slidesPerView);
+    updateCarousel();
+  };
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    if (current > total - slidesPerView) {
+      current = Math.max(0, total - slidesPerView);
+    }
+    buildDots();
+    updateCarousel();
+  });
+
+  // Re-inicializa al cambiar de pestaña para evitar fallas de cálculo por el "hidden"
+  document.querySelectorAll('.tab-btn, [data-tab]').forEach(tab => {
+    tab.addEventListener('click', () => {
+      setTimeout(initCarousel, 150);
+    });
   });
 
   if (document.readyState === 'loading') {

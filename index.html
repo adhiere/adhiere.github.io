@@ -228,7 +228,7 @@
               <option value="problemaSueño">Problemas de sueño</option>
               <option value="ira">Manejo de la ira</option>
               <option value="autolesiones">Autolesiones y búsqueda de ayuda</option>
-              <option value="ansiedad">Ansiedad social</option>
+              <option value="ansiedadSocial">Ansiedad social</option>
               <option value="proyectoVida">Proyecto de vida y toma de decisiones</option>
             </select>
           </div>
@@ -995,62 +995,128 @@ Plataforma de Organizaciones de Pacientes</span>
 
       <!-- TAB: GUÍAS PRÁCTICAS -->
       <div class="psico-content hidden" id="psico-guias">
-        <div class="resource-grid">
 
-          <!-- MODELO: Guía descargable -->
-          <!-- Para reemplazar: cambia href del botón por la ruta real del PDF.
-               Ej: href="guias/guia-afrontamiento.pdf" -->
-          <div class="resource-card resource-card--guia">
-            <div class="guia-preview">
-              <div class="guia-icon-wrap"></div>
-              <div class="guia-meta-wrap">
-                <span class="guia-tipo">PDF · 8 páginas</span>
-                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+        <div class="guia-carousel-wrap">
+          <button class="info-arrow info-arrow--prev" onclick="guiaPrev()" aria-label="Anterior">&#8592;</button>
+
+          <div class="info-track-outer">
+            <div class="info-track" id="guiaTrack">
+
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia1.jpeg" data-src="img/guia1.jpeg" alt="Violencia Psicológica" />
+                    <div class="info-card-hover">
+                      <span>🔍 Ver completa</span>
+                    </div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Violencia Psicológica</h4>
+                    <p>Técnica para identificar el desequilibrio entre las demandas y tus recursos, y tomar acciones para recuperar tu bienestar.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-badge resource-badge--guia">Guía</span>
-              <h4>Guía de afrontamiento emocional</h4>
-              <p>Estrategias prácticas y basadas en evidencia para atravesar momentos difíciles dentro y fuera de las
-                sesiones.</p>
-              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
-            </div>
-          </div>
 
-          <!-- MODELO: Guía 2 -->
-          <div class="resource-card resource-card--guia">
-            <div class="guia-preview">
-              <div class="guia-icon-wrap"></div>
-              <div class="guia-meta-wrap">
-                <span class="guia-tipo">PDF · 6 páginas</span>
-                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia2.jpeg" data-src="img/guia2.jpeg" alt="Sexualidad y salud sexual" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Sexualidad y salud sexual</h4>
+                    <p>Técnica para identificar el desequilibrio entre las demandas y tus recursos, y tomar acciones para recuperar tu bienestar.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-badge resource-badge--guia">Guía</span>
-              <h4>Cómo elegir un psicólogo</h4>
-              <p>Qué preguntas hacerse, qué señales observar y cómo saber si el vínculo terapéutico es el adecuado.</p>
-              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
-            </div>
-          </div>
 
-          <!-- MODELO: Guía 3 -->
-          <div class="resource-card resource-card--guia">
-            <div class="guia-preview">
-              <div class="guia-icon-wrap"></div>
-              <div class="guia-meta-wrap">
-                <span class="guia-tipo">PDF · 10 páginas</span>
-                <span class="guia-autor">Elaborado por el equipo ADHIERE</span>
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia3.jpeg" data-src="img/guia3.jpeg" alt="Adicciones" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Adicciones</h4>
+                    <p>Técnicas para identificar desencadenantes y consecuencias, y tomar acciones para recuperar tu libertad y bienestar.</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="resource-card-body">
-              <span class="resource-badge resource-badge--guia">Guía</span>
-              <h4>Manejo emocional diario</h4>
-              <p>Técnicas de regulación emocional que puedes aplicar entre sesiones para fortalecer tu proceso.</p>
-              <a href="#" class="btn-small" download>⬇ Descargar PDF</a>
-            </div>
-          </div>
 
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia4.jpeg" data-src="img/guia4.jpeg" alt="Bitácora del descanso y sueño reparador" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Bitácora del descanso y sueño reparador</h4>
+                    <p>Técnica para registrar patrones de sueño y vigilia, y hábitos diarios, para identifcar desencadenantes de problemas de sueño y mejorar tu descanso.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia5.jpeg" data-src="img/guia5.jpeg" alt="Bitácora del volcán emocional (Manejo de la ira)" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Bitácora del volcán emocional (Manejo de la ira)</h4>
+                    <p>Técnicas para registrar, identifcar y canalizar la ira antes de que estalle. Ayuda a reconocer las señales de advertencia y a desarrollar estrategias de calma.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia6.jpeg" data-src="img/guia6.jpeg" alt="Autolesiones y búsqueda de ayuda (Red de seguridad)" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Autolesiones y búsqueda de ayuda (Red de seguridad)</h4>
+                    <p>Técnicas para identificar situaciones de riesgo, crear un plan de seguridad inmediato y fortalecer tu red de apoyo para prevenir la autolesión y fomentar el bienestar emocional.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia7.jpeg" data-src="img/guia7.jpeg" alt="Ansiedad social (Escalera de exposición gradual)" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Ansiedad social (Escalera de exposición gradual)</h4>
+                    <p>Técnicas para enfrentar miedos sociales de manera controlada y progresiva, creando una jerarquía de situacioens que generan ansiedad para superarlas paso a paso.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="info-slide">
+                <div class="info-card" onclick="openLightbox(this)">
+                  <div class="info-card-img-wrap">
+                    <img src="img/guia8.jpeg" data-src="img/guia8.jpeg" alt="Proyecto de vida y toma de decisiones" />
+                    <div class="info-card-hover"><span>🔍 Ver completa</span></div>
+                  </div>
+                  <div class="info-card-body">
+                    <span class="resource-badge resource-badge--guia">Guía</span>
+                    <h4>Proyecto de vida y toma de decisiones</h4>
+                    <p>Técnicas para alinear tus valores, identificar tus metas y tomar decisiones conscientes que den dirección a tu futuro.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div></div><button class="info-arrow info-arrow--next" onclick="guiaNext()" aria-label="Siguiente">&#8594;</button>
         </div>
       </div>
     </div>
@@ -1062,33 +1128,49 @@ Plataforma de Organizaciones de Pacientes</span>
       <span class="section-eyebrow">Profesionales verificados</span>
       <h2 class="section-title">Psicólogos recomendados</h2>
       <p class="section-sub">Profesionales con quienes puedes dar el siguiente paso en tu proceso terapéutico.</p>
+
       <div class="psicos-grid">
+
         <div class="psico-card">
-          <div class="psico-avatar">MR</div>
-          <h3>Lic. María Rodríguez</h3>
-          <span class="psico-tag">Ansiedad · Autoestima</span>
-          <span class="psico-tag modal-tag">Virtual y presencial</span>
-          <p>Especialista en terapia cognitivo-conductual con enfoque empático y personalizado. Más de 8 años
-            acompañando procesos de cambio.</p>
-          <a href="#contacto" class="btn-small">Solicitar información</a>
+          <div class="psico-avatar"><img src="img/psico 1.jpeg" style="border-radius: 100px;"></div>
+          <h3>Dr. Victor Ríos Cubas</h3>
+          <p>Gerente general de la consultora Liderando Kambios. Docente investigador, exjefe de Recursos Humanos y exdirector del Centro de Liderazgo Continental de la UC.
+            <span class="more-text">
+              Autor del libro «Entrenamiento de habilidades y competencias en las organizaciones». Fundador y exdirector del Centro Especializado en Psicoterapia Integral.
+              Miembro de la Red Latinoamericana de Orientación Vocacional y Profesional y de la Sociedad Interamericana de Psicología (SIP). Consultor y conferencista internacional.
+              Doctor en Psicología por la Universidad de Palermo de Buenos Aires, Argentina. Magíster en Mejora de Habilidades y Competencias por la Universidad Complutense de Madrid, España.
+              Magíster en Dirección de Recursos Humanos por el Colegio de Politólogos de Madrid, España. Certificado en Dinámicas de Grupos por Gerza, México. Licenciado en Psicología.
+            </span>
+            <span class="read-more-btn">Ver más</span>
+          </p>
+          
+          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
         </div>
         <div class="psico-card">
-          <div class="psico-avatar">CP</div>
-          <h3>Lic. Carlos Paredes</h3>
-          <span class="psico-tag">Depresión · Estrés</span>
-          <span class="psico-tag modal-tag">Presencial</span>
-          <p>Psicólogo clínico con formación en terapia humanista. Su estilo dinámico y directo facilita avances reales
-            desde la primera sesión.</p>
-          <a href="#contacto" class="btn-small">Solicitar información</a>
+          <div class="psico-avatar"><img src="img/psico 2.jpeg" style="border-radius: 100px;"></div>
+          <h3>Lic. Miriam Doza Damia</h3>
+          <p>Profesional en psicología con experiencia en el ámbito universitario y en la atención a casos relacionados con protección y bienestar emocional.
+            <span class="more-text">
+              Actualmente se desempeña como docente universitaria en la Universidad Continental, donde aporta a la formación académica de estudiantes desde su experiencia profesional.
+              Además, cuenta con experiencia como psicóloga en el Centro Emergencia Mujer, espacio orientado a la atención y acompañamiento de personas en situaciones de vulnerabilidad.
+              Su perfil refleja una combinación entre la enseñanza, la orientación psicológica y el compromiso social, destacándose por su labor en el acompañamiento profesional y la promoción 
+              del bienestar psicológico.
+            </span>
+            <span class="read-more-btn">Ver más</span>            
+          </p>
+          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
         </div>
         <div class="psico-card">
-          <div class="psico-avatar">AL</div>
-          <h3>Lic. Andrea Luna</h3>
-          <span class="psico-tag">Relaciones · Estrés</span>
-          <span class="psico-tag modal-tag">Virtual</span>
-          <p>Especialista en terapia sistémica y relaciones interpersonales. Crea espacios de confianza donde el cambio
-            ocurre naturalmente.</p>
-          <a href="#contacto" class="btn-small">Solicitar información</a>
+          <div class="psico-avatar"><img src="img/psico 3.jpeg" style="border-radius: 100px;"></div>
+          <h3>Dra. Brigitte Jacobo Orellana</h3>
+          <p>Magíster en Recursos Humanos y Gestión Organizacional. Doctorado en Ciencias de la Educación. Psicóloga Organizacional y Ocupacional. Docente universitario</p>
+          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
+        </div>
+        <div class="psico-card">
+          <div class="psico-avatar"><img src="img/psico 4.jpeg" style="border-radius: 100px;"></div>
+          <h3>Dr. Jorge Salcedo Chuquimantari</h3>
+          <p>Director Programa de Psicología - Universidad Continental. Dirección Académica en Educación Superior. Gestión Curricular y Acreditación. Auditor interno ISO 19011:2018. Psicólogo. Docente universitario</p>
+          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
         </div>
       </div>
     </div>
@@ -1174,6 +1256,25 @@ Plataforma de Organizaciones de Pacientes</span>
 
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        // Busca el contenedor de texto hermano dentro del mismo párrafo
+        const moreText = this.previousElementSibling;
+        
+        // Alterna la clase para mostrar/ocultar
+        moreText.classList.toggle('show');
+        
+        // Cambia el texto del botón según el estado
+        if (moreText.classList.contains('show')) {
+          this.textContent = 'Ver menos';
+        } else {
+          this.textContent = 'Ver más';
+        }
+      });
+    });
+  </script>
+
 </body>
 <div class="watermark">BLOQUEADO</div>
 
