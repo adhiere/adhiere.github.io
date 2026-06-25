@@ -751,7 +751,6 @@ document.querySelectorAll('.barrier-card, .resource-card, .psico-card, .rec-card
     slidesPerView = getSlidesPerView();
     current = 0;
 
-    buildDots();
     updateCarousel();
   }
 
@@ -807,7 +806,7 @@ document.querySelectorAll('.barrier-card, .resource-card, .psico-card, .rec-card
     if (current > total - slidesPerView) {
       current = Math.max(0, total - slidesPerView);
     }
-    buildDots();
+  
     updateCarousel();
   });
 
