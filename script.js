@@ -50,12 +50,14 @@ function nextStep(current) {
   step.classList.remove('active');
   if (next) {
     document.getElementById(next).classList.add('active');
+    document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
   }
 }
 
 function prevStep(current) {
   document.getElementById('step' + current).classList.remove('active');
   document.getElementById('step' + (current - 1)).classList.add('active');
+  document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
 }
 
 function validateStep(num) {
@@ -116,6 +118,8 @@ function submitForm() {
 
   // Renderizar sección de recomendaciones
   renderRecsSection(state.responses);
+
+  document.getElementById('evaluacion').scrollIntoView({ behavior: 'smooth' });
 }
 
 // ---- PERSONALIZACIÓN POR BARRERA ----
@@ -175,7 +179,7 @@ const RECURSOS = {
 
 const PSICOLOGOS = [
   {
-    iniciales: 'VR',
+    iniciales: 'VR', genero: 'hombre',
     imgSrc: 'img/psico 1.jpeg',
     nombre: 'Dr. Victor Ríos Cubas',
     especialidad: 'Habilidades sociales · Desarrollo organizacional',
@@ -183,7 +187,7 @@ const PSICOLOGOS = [
     descripcion: 'Doctor en Psicología. Gerente general de Liderando Kambios. Docente investigador y consultor internacional.'
   },
   {
-    iniciales: 'MD',
+    iniciales: 'MD', genero: 'mujer',
     imgSrc: 'img/psico 2.jpeg',
     nombre: 'Lic. Miriam Doza Damia',
     especialidad: 'Bienestar emocional · Protección y vulnerabilidad',
@@ -191,7 +195,7 @@ const PSICOLOGOS = [
     descripcion: 'Psicóloga con experiencia en el ámbito universitario y en el Centro Emergencia Mujer. Docente en Universidad Continental.'
   },
   {
-    iniciales: 'BJ',
+    iniciales: 'BJ', genero: 'mujer',
     imgSrc: 'img/psico 3.jpeg',
     nombre: 'Dra. Brigitte Jacobo Orellana',
     especialidad: 'Psicología organizacional · Recursos humanos',
@@ -199,12 +203,60 @@ const PSICOLOGOS = [
     descripcion: 'Magíster en Recursos Humanos. Doctora en Ciencias de la Educación. Psicóloga Organizacional y docente universitaria.'
   },
   {
-    iniciales: 'JS',
+    iniciales: 'JS', genero: 'hombre',
     imgSrc: 'img/psico 4.jpeg',
     nombre: 'Dr. Jorge Salcedo Chuquimantari',
     especialidad: 'Gestión académica · Orientación psicológica',
     modalidad: 'Presencial',
     descripcion: 'Director del Programa de Psicología en Universidad Continental. Auditor ISO 19011:2018. Docente universitario.'
+  },
+  {
+    iniciales: 'NH', genero: 'mujer',
+    imgSrc: 'img/natalyHuaraca.jpeg',
+    nombre: 'Ps. Nataly Huaraca Mantari',
+    especialidad: 'Terapia de pareja · Familia · Duelo',
+    modalidad: 'Presencial',
+    descripcion: 'Psicóloga clínica y psicoterapeuta, fundadora de Avanti Centro Psicoterapéutico. Más de 12 años de experiencia.'
+  },
+  {
+    iniciales: 'EM', genero: 'mujer',
+    imgSrc: 'img/elsaMatos.jpeg',
+    nombre: 'Mag. Elsa Matos Chancas',
+    especialidad: 'Recursos humanos · Desarrollo organizacional',
+    modalidad: 'Presencial',
+    descripcion: 'Psicóloga y magíster especialista en gestión de recursos humanos y docencia universitaria.'
+  },
+  {
+    iniciales: 'JC', genero: 'hombre',
+    imgSrc: 'img/javierCamargo.jpeg',
+    nombre: 'Ps. Javier Camargo Landa',
+    especialidad: 'Psicología educativa · Proyectos sociales',
+    modalidad: 'Presencial',
+    descripcion: 'Consultor y catedrático con amplia trayectoria en Huancayo. Especialista en psicología educativa y organizacional.'
+  },
+  {
+    iniciales: 'SU', genero: 'hombre',
+    imgSrc: 'img/sandroUrco.jpeg',
+    nombre: 'Ps. Sandro Urco Cáceres',
+    especialidad: 'Investigación · Psicología educativa',
+    modalidad: 'Presencial',
+    descripcion: 'Docente universitario y asesor de tesis en salud mental. Promueve el rigor científico en la formación de psicólogos.'
+  },
+  {
+    iniciales: 'LL', genero: 'mujer',
+    imgSrc: 'img/luciaLoo.jpeg',
+    nombre: 'Ps. Lucía Loo Martínez',
+    especialidad: 'Salud mental comunitaria · Género e inclusión',
+    modalidad: 'Presencial',
+    descripcion: 'Psicóloga clínica y ocupacional experta en salud mental comunitaria e intervenciones con enfoque de género.'
+  },
+  {
+    iniciales: 'CA', genero: 'hombre',
+    imgSrc: 'img/carlosAvila.jpeg',
+    nombre: 'Ps. Carlos Ávila Benito',
+    especialidad: 'Psicología clínica · Psicología forense',
+    modalidad: 'Presencial',
+    descripcion: 'Psicólogo Clínico y Forense con más de 25 años de experiencia. Ex perito del Ministerio Público en Junín.'
   }
 ];
 
@@ -360,10 +412,30 @@ function getRecommendations(respuestas) {
     });
   }
 
-  // 8. PSICÓLOGO — rotamos entre los 4 según área
-  const areasList = Object.keys(NOMBRES_AREA);
-  const idx = Math.max(0, areasList.indexOf(area)) % PSICOLOGOS.length;
-  recomendaciones.push(buildPsicologoRec(idx));
+  // 8. PSICÓLOGO — filtrando por preferencia de género
+  const generoPref = respuestas.genero; // 'hombre' | 'mujer' | 'indiferente'
+
+  // Filtrar candidatos según preferencia
+  let candidatos = PSICOLOGOS;
+  if (generoPref === 'hombre' || generoPref === 'mujer') {
+    const filtrados = PSICOLOGOS.filter(p => p.genero === generoPref);
+    // Si hay candidatos del género preferido, usarlos; si no (por si acaso), usar todos
+    if (filtrados.length > 0) candidatos = filtrados;
+  }
+
+  // Elegir uno al azar entre los candidatos filtrados
+  const idx = Math.floor(Math.random() * candidatos.length);
+  const psicoElegido = candidatos[idx];
+
+  recomendaciones.push({
+    type: 'psicologo',
+    iniciales: psicoElegido.iniciales,
+    imgSrc: psicoElegido.imgSrc,
+    nombre: psicoElegido.nombre,
+    especialidad: psicoElegido.especialidad,
+    modalidad: psicoElegido.modalidad,
+    descripcion: psicoElegido.descripcion
+  });
 
   return recomendaciones;
 }
