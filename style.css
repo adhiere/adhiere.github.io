@@ -1841,3 +1841,43 @@ input[type="email"]:focus {
     padding: 0.5rem 0.9rem;
   }
 }
+
+.psico-carousel-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.psico-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1.5px solid var(--gray-200);
+  height: 100%; /* Para que todas midan igual */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.psico-avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+}
+
+.psico-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100px; /* Asegura el círculo */
+}
+
+.psico-bio {
+  font-size: 0.88rem;
+  color: var(--gray-400);
+  line-height: 1.6;
+}

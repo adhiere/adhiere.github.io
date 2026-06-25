@@ -1030,3 +1030,68 @@ document.querySelectorAll('.barrier-card, .resource-card, .psico-card, .rec-card
   });
 
 })();
+
+// ============================================
+// CARRUSEL DE PSICÓLOGOS
+// ============================================
+(function () {
+  let current = 0;
+  let total = 0;
+  let slidesPerView = 3;
+
+  function getSlidesPerView() {
+    if (window.innerWidth <= 600) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function initPsicoCarousel() {
+    const track = document.getElementById('psicoTrack');
+    if (!track) return;
+    total = track.querySelectorAll('.info-slide').length;
+    slidesPerView = getSlidesPerView();
+    current = 0;
+    update();
+  }
+
+  function update() {
+    const track = document.getElementById('psicoTrack');
+    if (!track) return;
+    
+    slidesPerView = getSlidesPerView();
+    const gap = 20; 
+    const containerW = track.parentElement.offsetWidth;
+    const slideW = (containerW - (slidesPerView - 1) * gap) / slidesPerView;
+
+    const slides = track.querySelectorAll('.info-slide');
+    slides.forEach(slide => {
+      slide.style.flex = `0 0 ${slideW}px`;
+    });
+
+    const offset = current * (slideW + gap);
+    track.style.transform = `translateX(-${offset}px)`;
+
+    // Flechas
+    const prev = document.querySelector('.psicos-section .info-arrow--prev');
+    const next = document.querySelector('.psicos-section .info-arrow--next');
+    if (prev) prev.disabled = current === 0;
+    if (next) next.disabled = current >= total - slidesPerView;
+  }
+
+  window.psicoPrev = function () {
+    current = Math.max(0, current - slidesPerView);
+    update();
+  };
+
+  window.psicoNext = function () {
+    current = Math.min(total - slidesPerView, current + slidesPerView);
+    update();
+  };
+
+  window.addEventListener('resize', () => {
+    slidesPerView = getSlidesPerView();
+    update();
+  });
+
+  document.addEventListener('DOMContentLoaded', initPsicoCarousel);
+})();

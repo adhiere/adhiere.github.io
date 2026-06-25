@@ -1126,50 +1126,158 @@
       <h2 class="section-title">Psicólogos recomendados</h2>
       <p class="section-sub">Profesionales con quienes puedes dar el siguiente paso en tu proceso terapéutico.</p>
 
-      <div class="psicos-grid">
+      <div class="psico-carousel-wrap">
+        <button class="info-arrow info-arrow--prev" onclick="psicoPrev()" aria-label="Anterior">&#8592;</button>
 
-        <div class="psico-card">
-          <div class="psico-avatar"><img src="img/psico 1.jpeg" style="border-radius: 100px;"></div>
-          <h3>Dr. Victor Ríos Cubas</h3>
-          <p>Gerente general de la consultora Liderando Kambios. Docente investigador, exjefe de Recursos Humanos y exdirector del Centro de Liderazgo Continental de la UC.
-            <span class="more-text">
-              Autor del libro «Entrenamiento de habilidades y competencias en las organizaciones». Fundador y exdirector del Centro Especializado en Psicoterapia Integral.
-              Miembro de la Red Latinoamericana de Orientación Vocacional y Profesional y de la Sociedad Interamericana de Psicología (SIP). Consultor y conferencista internacional.
-              Doctor en Psicología por la Universidad de Palermo de Buenos Aires, Argentina. Magíster en Mejora de Habilidades y Competencias por la Universidad Complutense de Madrid, España.
-              Magíster en Dirección de Recursos Humanos por el Colegio de Politólogos de Madrid, España. Certificado en Dinámicas de Grupos por Gerza, México. Licenciado en Psicología.
-            </span>
-            <span class="read-more-btn">Ver más</span>
-          </p>
-          
-          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
+        <div class="info-track-outer">
+          <div class="info-track" id="psicoTrack">
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/psico 1.jpeg" alt="Dr. Victor Ríos Cubas"></div>
+                <h3>Dr. Victor Ríos Cubas</h3>
+                <p class="psico-bio">
+                  Gerente general de la consultora Liderando Kambios y docente investigador.
+                  <span class="more-text">
+                    Exjefe de Recursos Humanos y exdirector del Centro de Liderazgo Continental. Autor del libro «Entrenamiento de habilidades y competencias». Doctor en Psicología por la Universidad de Palermo.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/psico 2.jpeg" alt="Lic. Miriam Doza Damia"></div>
+                <h3>Lic. Miriam Doza Damia</h3>
+                <p class="psico-bio">
+                  Psicóloga con experiencia en el ámbito universitario y bienestar emocional.
+                  <span class="more-text">
+                    Docente en la Universidad Continental y ex psicóloga en el Centro Emergencia Mujer. Especialista en acompañamiento profesional y promoción de la salud mental.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/psico 3.jpeg" alt="Dra. Brigitte Jacobo Orellana"></div>
+                <h3>Dra. Brigitte Jacobo Orellana</h3>
+                <p class="psico-bio">
+                  Magíster en Recursos Humanos y Gestión Organizacional.
+                  <span class="more-text">
+                    Doctorado en Ciencias de la Educación. Psicóloga Organizacional y Ocupacional. Destacada docente universitaria con enfoque en desarrollo de talento.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/psico 4.jpeg" alt="Dr. Jorge Salcedo Chuquimantari"></div>
+                <h3>Dr. Jorge Salcedo</h3>
+                <p class="psico-bio">
+                  Director del Programa de Psicología en la Universidad Continental.
+                  <span class="more-text">
+                    Especialista en Dirección Académica, Gestión Curricular y Acreditación. Auditor interno ISO 19011:2018 y docente investigador.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/natalyHuaraca.jpeg" alt="Nataly Susan Huaraca Mantari"></div>
+                <h3>Ps. Nataly Huaraca</h3>
+                <p class="psico-bio">
+                  Psicóloga clínica y psicoterapeuta, fundadora de Avanti Centro Psicoterapéutico.
+                  <span class="more-text">
+                    Más de 12 años de experiencia especializada en terapia de pareja, familia y manejo del duelo (CPsP: 14663). Referente en psicoterapia integral en Perú.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/elsaMatos.jpeg" alt="Elsa Matos Chancas"></div>
+                <h3>Mag. Elsa Matos Chancas</h3>
+                <p class="psico-bio">
+                  Psicóloga y magíster especialista en gestión de recursos humanos.
+                  <span class="more-text">
+                    Experta en docencia universitaria y desarrollo organizacional. Su labor se centra en la formación de competencias y gestión del talento humano.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/javierCamargo.jpeg" alt="Javier Abilio Camargo Landa"></div>
+                <h3>Ps. Javier Camargo</h3>
+                <p class="psico-bio">
+                  Consultor y catedrático con amplia trayectoria en la provincia de Huancayo.
+                  <span class="more-text">
+                    Especialista en psicología educativa, organizacional y gestión de proyectos sociales, impactando positivamente en la región Junín.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/sandroUrco.jpeg" alt="Sandro Alex Urco Cáceres"></div>
+                <h3>Ps. Sandro Urco</h3>
+                <p class="psico-bio">
+                  Docente universitario enfocado en la investigación académica aplicada.
+                  <span class="more-text">
+                    Asesor de tesis en salud mental y psicología educativa. Su labor promueve el rigor científico en la formación de nuevos psicólogos.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/luciaLoo.jpeg" alt="Lucía Antonieta Loo Martínez"></div>
+                <h3>Ps. Lucía Loo Martínez</h3>
+                <p class="psico-bio">
+                  Psicóloga clínica y ocupacional experta en salud mental comunitaria.
+                  <span class="more-text">
+                    Líder en intervenciones con enfoque de género e inclusión social. Investigadora y docente dedicada a la formación metodológica en salud.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="info-slide">
+              <div class="psico-card">
+                <div class="psico-avatar"><img src="img/carlosAvila.jpeg" alt="Carlos Moisés Ávila Benito"></div>
+                <h3>Ps. Carlos Ávila Benito</h3>
+                <p class="psico-bio">
+                  Psicólogo Clínico y Forense con más de 25 años de experiencia.
+                  <span class="more-text">
+                    Ex perito del Ministerio Público (Junín). Especialista en valoración de daño psíquico, Cámara Gesell y entrevistas periciales complejas.
+                  </span>
+                  <span class="read-more-btn">Ver más</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="psico-card">
-          <div class="psico-avatar"><img src="img/psico 2.jpeg" style="border-radius: 100px;"></div>
-          <h3>Lic. Miriam Doza Damia</h3>
-          <p>Profesional en psicología con experiencia en el ámbito universitario y en la atención a casos relacionados con protección y bienestar emocional.
-            <span class="more-text">
-              Actualmente se desempeña como docente universitaria en la Universidad Continental, donde aporta a la formación académica de estudiantes desde su experiencia profesional.
-              Además, cuenta con experiencia como psicóloga en el Centro Emergencia Mujer, espacio orientado a la atención y acompañamiento de personas en situaciones de vulnerabilidad.
-              Su perfil refleja una combinación entre la enseñanza, la orientación psicológica y el compromiso social, destacándose por su labor en el acompañamiento profesional y la promoción 
-              del bienestar psicológico.
-            </span>
-            <span class="read-more-btn">Ver más</span>            
-          </p>
-          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
-        </div>
-        <div class="psico-card">
-          <div class="psico-avatar"><img src="img/psico 3.jpeg" style="border-radius: 100px;"></div>
-          <h3>Dra. Brigitte Jacobo Orellana</h3>
-          <p>Magíster en Recursos Humanos y Gestión Organizacional. Doctorado en Ciencias de la Educación. Psicóloga Organizacional y Ocupacional. Docente universitario</p>
-          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
-        </div>
-        <div class="psico-card">
-          <div class="psico-avatar"><img src="img/psico 4.jpeg" style="border-radius: 100px;"></div>
-          <h3>Dr. Jorge Salcedo Chuquimantari</h3>
-          <p>Director Programa de Psicología - Universidad Continental. Dirección Académica en Educación Superior. Gestión Curricular y Acreditación. Auditor interno ISO 19011:2018. Psicólogo. Docente universitario</p>
-          <!--<a href="#contacto" class="btn-small">Solicitar información</a>-->
-        </div>
+
+        <button class="info-arrow info-arrow--next" onclick="psicoNext()" aria-label="Siguiente">&#8594;</button>
       </div>
+      <div id="psicoDots" class="info-dots-container"></div>
     </div>
   </section>
 
